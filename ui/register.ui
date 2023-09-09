@@ -1,0 +1,455 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>DockWidget</class>
+ <widget class="QDockWidget" name="DockWidget">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>714</width>
+    <height>505</height>
+   </rect>
+  </property>
+  <property name="maximumSize">
+   <size>
+    <width>714</width>
+    <height>505</height>
+   </size>
+  </property>
+  <property name="focusPolicy">
+   <enum>Qt::NoFocus</enum>
+  </property>
+  <property name="acceptDrops">
+   <bool>false</bool>
+  </property>
+  <property name="styleSheet">
+   <string notr="true">background-color: rgb(255, 255, 255);</string>
+  </property>
+  <property name="windowTitle">
+   <string>信息录入</string>
+  </property>
+  <widget class="QWidget" name="dockWidgetContents">
+   <widget class="QLabel" name="title_1">
+    <property name="geometry">
+     <rect>
+      <x>30</x>
+      <y>20</y>
+      <width>641</width>
+      <height>31</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <family>思源黑体 CN Bold</family>
+      <pointsize>12</pointsize>
+      <weight>75</weight>
+      <bold>true</bold>
+      <kerning>true</kerning>
+     </font>
+    </property>
+    <property name="mouseTracking">
+     <bool>true</bool>
+    </property>
+    <property name="text">
+     <string>信息录入</string>
+    </property>
+    <property name="textFormat">
+     <enum>Qt::AutoText</enum>
+    </property>
+    <property name="alignment">
+     <set>Qt::AlignCenter</set>
+    </property>
+    <property name="wordWrap">
+     <bool>false</bool>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="pushButton">
+    <property name="enabled">
+     <bool>true</bool>
+    </property>
+    <property name="geometry">
+     <rect>
+      <x>30</x>
+      <y>410</y>
+      <width>641</width>
+      <height>41</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>录入</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="warning">
+    <property name="enabled">
+     <bool>true</bool>
+    </property>
+    <property name="geometry">
+     <rect>
+      <x>31</x>
+      <y>380</y>
+      <width>641</width>
+      <height>20</height>
+     </rect>
+    </property>
+    <property name="toolTip">
+     <string/>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">color:red</string>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+    <property name="scaledContents">
+     <bool>false</bool>
+    </property>
+    <property name="alignment">
+     <set>Qt::AlignCenter</set>
+    </property>
+   </widget>
+   <widget class="QLabel" name="grade_label">
+    <property name="geometry">
+     <rect>
+      <x>31</x>
+      <y>197</y>
+      <width>38</width>
+      <height>30</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <family>思源黑体 CN Light</family>
+      <pointsize>10</pointsize>
+      <kerning>true</kerning>
+     </font>
+    </property>
+    <property name="text">
+     <string>年级:</string>
+    </property>
+    <property name="buddy">
+     <cstring>grade_input</cstring>
+    </property>
+   </widget>
+   <widget class="QLineEdit" name="name_input">
+    <property name="geometry">
+     <rect>
+      <x>76</x>
+      <y>79</y>
+      <width>261</width>
+      <height>30</height>
+     </rect>
+    </property>
+   </widget>
+   <widget class="QLabel" name="academy_label">
+    <property name="geometry">
+     <rect>
+      <x>31</x>
+      <y>138</y>
+      <width>38</width>
+      <height>30</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <family>思源黑体 CN Light</family>
+      <pointsize>10</pointsize>
+      <kerning>true</kerning>
+     </font>
+    </property>
+    <property name="text">
+     <string>学院:</string>
+    </property>
+    <property name="buddy">
+     <cstring>academy_input</cstring>
+    </property>
+   </widget>
+   <widget class="QLineEdit" name="grade_input">
+    <property name="geometry">
+     <rect>
+      <x>76</x>
+      <y>197</y>
+      <width>261</width>
+      <height>30</height>
+     </rect>
+    </property>
+   </widget>
+   <widget class="QLabel" name="name_label">
+    <property name="geometry">
+     <rect>
+      <x>31</x>
+      <y>79</y>
+      <width>38</width>
+      <height>30</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <family>思源黑体 CN Light</family>
+      <pointsize>10</pointsize>
+      <kerning>true</kerning>
+     </font>
+    </property>
+    <property name="text">
+     <string>姓名:</string>
+    </property>
+    <property name="buddy">
+     <cstring>name_input</cstring>
+    </property>
+   </widget>
+   <widget class="QLineEdit" name="academy_input">
+    <property name="geometry">
+     <rect>
+      <x>76</x>
+      <y>138</y>
+      <width>261</width>
+      <height>30</height>
+     </rect>
+    </property>
+   </widget>
+   <widget class="QLabel" name="banji_label">
+    <property name="geometry">
+     <rect>
+      <x>361</x>
+      <y>197</y>
+      <width>38</width>
+      <height>30</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <family>思源黑体 CN Light</family>
+      <pointsize>10</pointsize>
+      <kerning>true</kerning>
+     </font>
+    </property>
+    <property name="text">
+     <string>班级:</string>
+    </property>
+    <property name="buddy">
+     <cstring>banji_input</cstring>
+    </property>
+   </widget>
+   <widget class="QLineEdit" name="id_input">
+    <property name="geometry">
+     <rect>
+      <x>406</x>
+      <y>79</y>
+      <width>261</width>
+      <height>30</height>
+     </rect>
+    </property>
+   </widget>
+   <widget class="QLabel" name="id_label">
+    <property name="geometry">
+     <rect>
+      <x>361</x>
+      <y>79</y>
+      <width>38</width>
+      <height>30</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <family>思源黑体 CN Light</family>
+      <pointsize>10</pointsize>
+      <kerning>true</kerning>
+     </font>
+    </property>
+    <property name="text">
+     <string>学号:</string>
+    </property>
+    <property name="buddy">
+     <cstring>id_input</cstring>
+    </property>
+   </widget>
+   <widget class="QLineEdit" name="banji_input">
+    <property name="geometry">
+     <rect>
+      <x>406</x>
+      <y>197</y>
+      <width>261</width>
+      <height>30</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+    <property name="frame">
+     <bool>true</bool>
+    </property>
+    <property name="dragEnabled">
+     <bool>false</bool>
+    </property>
+    <property name="readOnly">
+     <bool>false</bool>
+    </property>
+   </widget>
+   <widget class="QLabel" name="major_label">
+    <property name="geometry">
+     <rect>
+      <x>361</x>
+      <y>138</y>
+      <width>38</width>
+      <height>30</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <family>思源黑体 CN Light</family>
+      <pointsize>10</pointsize>
+      <kerning>true</kerning>
+     </font>
+    </property>
+    <property name="text">
+     <string>专业:</string>
+    </property>
+    <property name="buddy">
+     <cstring>major_input</cstring>
+    </property>
+   </widget>
+   <widget class="QLineEdit" name="major_input">
+    <property name="geometry">
+     <rect>
+      <x>406</x>
+      <y>138</y>
+      <width>261</width>
+      <height>30</height>
+     </rect>
+    </property>
+   </widget>
+   <widget class="QLabel" name="teacher_label">
+    <property name="geometry">
+     <rect>
+      <x>31</x>
+      <y>340</y>
+      <width>72</width>
+      <height>30</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <family>思源黑体 CN Light</family>
+      <pointsize>10</pointsize>
+      <kerning>true</kerning>
+     </font>
+    </property>
+    <property name="text">
+     <string>指导老师:</string>
+    </property>
+    <property name="buddy">
+     <cstring>teacher_input</cstring>
+    </property>
+   </widget>
+   <widget class="QLineEdit" name="title_input">
+    <property name="geometry">
+     <rect>
+      <x>144</x>
+      <y>285</y>
+      <width>521</width>
+      <height>30</height>
+     </rect>
+    </property>
+   </widget>
+   <widget class="QLabel" name="zhichen_label">
+    <property name="geometry">
+     <rect>
+      <x>354</x>
+      <y>340</y>
+      <width>106</width>
+      <height>30</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <family>思源黑体 CN Light</family>
+      <pointsize>10</pointsize>
+      <kerning>true</kerning>
+     </font>
+    </property>
+    <property name="text">
+     <string>指导老师职称:</string>
+    </property>
+    <property name="buddy">
+     <cstring>zhichen_input</cstring>
+    </property>
+   </widget>
+   <widget class="QLineEdit" name="zhichen_input">
+    <property name="geometry">
+     <rect>
+      <x>467</x>
+      <y>340</y>
+      <width>201</width>
+      <height>30</height>
+     </rect>
+    </property>
+   </widget>
+   <widget class="QLabel" name="title_label">
+    <property name="geometry">
+     <rect>
+      <x>31</x>
+      <y>285</y>
+      <width>106</width>
+      <height>30</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <family>思源黑体 CN Light</family>
+      <pointsize>10</pointsize>
+      <kerning>true</kerning>
+     </font>
+    </property>
+    <property name="text">
+     <string>毕业设计题目:</string>
+    </property>
+    <property name="buddy">
+     <cstring>title_input</cstring>
+    </property>
+   </widget>
+   <widget class="QLineEdit" name="teacher_input">
+    <property name="geometry">
+     <rect>
+      <x>144</x>
+      <y>340</y>
+      <width>194</width>
+      <height>30</height>
+     </rect>
+    </property>
+   </widget>
+   <widget class="QComboBox" name="school_select">
+    <property name="geometry">
+     <rect>
+      <x>80</x>
+      <y>140</y>
+      <width>261</width>
+      <height>31</height>
+     </rect>
+    </property>
+   </widget>
+   <widget class="QComboBox" name="major_select">
+    <property name="geometry">
+     <rect>
+      <x>400</x>
+      <y>140</y>
+      <width>261</width>
+      <height>31</height>
+     </rect>
+    </property>
+   </widget>
+  </widget>
+ </widget>
+ <tabstops>
+  <tabstop>name_input</tabstop>
+  <tabstop>id_input</tabstop>
+  <tabstop>academy_input</tabstop>
+  <tabstop>major_input</tabstop>
+  <tabstop>grade_input</tabstop>
+  <tabstop>banji_input</tabstop>
+  <tabstop>title_input</tabstop>
+  <tabstop>teacher_input</tabstop>
+  <tabstop>zhichen_input</tabstop>
+  <tabstop>pushButton</tabstop>
+ </tabstops>
+ <resources/>
+ <connections/>
+</ui>
