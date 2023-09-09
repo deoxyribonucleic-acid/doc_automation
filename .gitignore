@@ -1,6 +1,6 @@
 # unused folders
 out/
 # python cache
-/__pycache__/
+*s/__pycache__/
 
 .DS_Store
