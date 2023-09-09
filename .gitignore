@@ -2,4 +2,5 @@
 out/
 # python cache
 **/__pycache__/
+tools/__pycache__/
 .DS_Store
