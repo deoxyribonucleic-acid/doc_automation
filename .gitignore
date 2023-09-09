@@ -3,3 +3,19 @@ out/
 # python cache
 *.pyc
 .DS_Store
+tools/__pycache__/assess.cpython-38.pyc
+tools/__pycache__/assess.cpython-39.pyc
+tools/__pycache__/db_operate.cpython-38.pyc
+tools/__pycache__/db_operate.cpython-39.pyc
+tools/__pycache__/doc2docx.cpython-38.pyc
+tools/__pycache__/doc2docx.cpython-39.pyc
+tools/__pycache__/merge.cpython-38.pyc
+tools/__pycache__/merge.cpython-39.pyc
+tools/__pycache__/signature.cpython-39.pyc
+tools/__pycache__/Template.cpython-38.pyc
+tools/__pycache__/Template.cpython-39.pyc
+ui/__pycache__/back.cpython-39.pyc
+ui/__pycache__/css_init.cpython-39.pyc
+ui/__pycache__/main_ui_stu.cpython-39.pyc
+ui/__pycache__/main_ui_teacher.cpython-39.pyc
+ui/__pycache__/register.cpython-39.pyc
