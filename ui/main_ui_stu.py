@@ -15,7 +15,7 @@ class Ui_MainWindow(object):
     def setupUi(self, MainWindow):
         MainWindow.setObjectName("MainWindow")
         MainWindow.resize(978, 755)
-        MainWindow.setMaximumSize(QtCore.QSize(978, 755))
+        MainWindow.setMinimumSize(QtCore.QSize(978, 755))
         MainWindow.setAutoFillBackground(False)
         MainWindow.setStyleSheet("background-color: rgb(255, 255, 255);\n"
 "font:  \"思源黑体 CN Normal\";\n"

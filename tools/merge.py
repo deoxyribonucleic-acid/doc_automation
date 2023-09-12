@@ -9,7 +9,7 @@ sys.path.append(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 if sys.platform == 'darwin' or sys.platform == 'linux':
     import docx2pdf
 if sys.platform == 'win32':
-    from win32com.client import constawin32s, gencache
+    from win32com.client import constants, gencache
 
 from tools.doc2docx import doc_to_docx
 
