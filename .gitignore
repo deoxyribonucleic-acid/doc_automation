@@ -19,3 +19,4 @@ ui/__pycache__/css_init.cpython-39.pyc
 ui/__pycache__/main_ui_stu.cpython-39.pyc
 ui/__pycache__/main_ui_teacher.cpython-39.pyc
 ui/__pycache__/register.cpython-39.pyc
+*.pyc
