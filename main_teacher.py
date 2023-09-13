@@ -1,4 +1,6 @@
 import sys
+import PyQt5.QtCore as QtCore
+import PyQt5.QtGui as QtGui
 from PyQt5.QtCore import pyqtSignal
 from PyQt5.QtGui import QIcon
 from PyQt5.QtWidgets import QMainWindow, QApplication, QDockWidget, QMessageBox
@@ -228,7 +230,17 @@ class main_ui(QMainWindow,Ui_MainWindow):
             self.zhichen_input.setStyleSheet(main_style.input_box())
 
 if __name__ == '__main__':
-    app = QApplication(sys.argv)
+    v_compare = QtCore.QVersionNumber(5, 6, 0)
+    v_current = QtCore.QVersionNumber.fromString(QtCore.QT_VERSION_STR)[0]
+    if QtCore.QVersionNumber.compare(v_current, v_compare) >= 0:
+        QApplication.setAttribute(QtCore.Qt.AA_EnableHighDpiScaling)
+        app = QApplication(sys.argv)
+    else:
+        app = QApplication(sys.argv)
+
+    font = app.font()
+    font.setPointSize(10)
+    app.setFont(font)
     fc = main_ui()
     fc.show()
     fc.init()
