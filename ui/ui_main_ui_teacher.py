@@ -15,13 +15,11 @@ from PyQt5.QtWidgets import *
 
 import ui.back
 
-# -*- coding: utf-8 -*-
-
 class Ui_MainWindow(object):
     def setupUi(self, MainWindow):
         if not MainWindow.objectName():
             MainWindow.setObjectName(u"MainWindow")
-        MainWindow.resize(968, 898)
+        MainWindow.resize(477, 500)
         sizePolicy = QSizePolicy(QSizePolicy.Preferred, QSizePolicy.Preferred)
         sizePolicy.setHorizontalStretch(0)
         sizePolicy.setVerticalStretch(0)
@@ -37,8 +35,8 @@ class Ui_MainWindow(object):
         self.template_generation = QAction(MainWindow)
         self.template_generation.setObjectName(u"template_generation")
         font = QFont()
-        font.setFamily(u"Arial")
-        font.setPointSize(14)
+        font.setFamily(u"Segoe UI")
+        font.setPointSize(10)
         self.template_generation.setFont(font)
         self.signature_fill = QAction(MainWindow)
         self.signature_fill.setObjectName(u"signature_fill")
@@ -85,8 +83,8 @@ class Ui_MainWindow(object):
         self.current_stu_label.setObjectName(u"current_stu_label")
         self.current_stu_label.setMinimumSize(QSize(0, 30))
         font1 = QFont()
-        font1.setFamily(u"\u601d\u6e90\u9ed1\u4f53 CN Normal")
-        font1.setPointSize(18)
+        font1.setFamily(u"Segoe UI")
+        font1.setPointSize(14)
         font1.setBold(False)
         font1.setItalic(False)
         font1.setWeight(50)
@@ -112,8 +110,8 @@ class Ui_MainWindow(object):
         self.choice_stu.setSizePolicy(sizePolicy2)
         self.choice_stu.setMinimumSize(QSize(0, 30))
         font2 = QFont()
-        font2.setFamily(u"\u601d\u6e90\u9ed1\u4f53 CN Normal")
-        font2.setPointSize(14)
+        font2.setFamily(u"Segoe UI")
+        font2.setPointSize(10)
         font2.setBold(False)
         font2.setItalic(False)
         font2.setWeight(50)
@@ -185,8 +183,8 @@ class Ui_MainWindow(object):
         self.xzcy_sig.setSizePolicy(sizePolicy4)
         self.xzcy_sig.setMinimumSize(QSize(40, 30))
         font4 = QFont()
-        font4.setFamily(u"\u601d\u6e90\u9ed1\u4f53 CN Normal")
-        font4.setPointSize(14)
+        font4.setFamily(u"Segoe UI")
+        font4.setPointSize(10)
         font4.setBold(False)
         font4.setItalic(False)
         font4.setWeight(50)
@@ -325,7 +323,7 @@ class Ui_MainWindow(object):
         self.scrollArea_2.setWidgetResizable(True)
         self.scrollAreaWidgetContents_2 = QWidget()
         self.scrollAreaWidgetContents_2.setObjectName(u"scrollAreaWidgetContents_2")
-        self.scrollAreaWidgetContents_2.setGeometry(QRect(0, 0, 730, 601))
+        self.scrollAreaWidgetContents_2.setGeometry(QRect(0, 0, 284, 348))
         self.verticalLayout_6 = QVBoxLayout(self.scrollAreaWidgetContents_2)
         self.verticalLayout_6.setObjectName(u"verticalLayout_6")
         self.title_1 = QLabel(self.scrollAreaWidgetContents_2)
@@ -699,7 +697,7 @@ class Ui_MainWindow(object):
         self.scrollArea.setWidgetResizable(True)
         self.scrollAreaWidgetContents = QWidget()
         self.scrollAreaWidgetContents.setObjectName(u"scrollAreaWidgetContents")
-        self.scrollAreaWidgetContents.setGeometry(QRect(0, 0, 406, 511))
+        self.scrollAreaWidgetContents.setGeometry(QRect(0, 0, 369, 325))
         sizePolicy10 = QSizePolicy(QSizePolicy.Expanding, QSizePolicy.Expanding)
         sizePolicy10.setHorizontalStretch(0)
         sizePolicy10.setVerticalStretch(0)
@@ -1266,7 +1264,7 @@ class Ui_MainWindow(object):
         self.output_input_4.setObjectName(u"output_input_4")
         self.output_input_4.setMinimumSize(QSize(0, 30))
         font5 = QFont()
-        font5.setFamily(u"\u601d\u6e90\u9ed1\u4f53 CN Normal")
+        font5.setFamily(u"Segoe UI")
         font5.setBold(False)
         font5.setItalic(False)
         font5.setWeight(50)
@@ -1381,7 +1379,7 @@ class Ui_MainWindow(object):
         self.toolBar = QToolBar(MainWindow)
         self.toolBar.setObjectName(u"toolBar")
         font6 = QFont()
-        font6.setPointSize(14)
+        font6.setPointSize(10)
         font6.setBold(False)
         font6.setItalic(False)
         font6.setWeight(50)
@@ -1486,7 +1484,7 @@ class Ui_MainWindow(object):
 
         self.retranslateUi(MainWindow)
 
-        self.main_widget.setCurrentIndex(0)
+        self.main_widget.setCurrentIndex(2)
         self.tabWidget.setCurrentIndex(0)
 
 

@@ -239,7 +239,8 @@ if __name__ == '__main__':
     v_compare = QtCore.QVersionNumber(5, 6, 0)
     v_current = QtCore.QVersionNumber.fromString(QtCore.QT_VERSION_STR)[0]
     if QtCore.QVersionNumber.compare(v_current, v_compare) >= 0:
-        QApplication.setAttribute(QtCore.Qt.AA_EnableHighDpiScaling)
+        # 适应高DPI设备
+        QtCore.QCoreApplication.setAttribute(QtCore.Qt.AA_EnableHighDpiScaling)
         app = QApplication(sys.argv)
     else:
         app = QApplication(sys.argv)
