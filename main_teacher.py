@@ -1,4 +1,5 @@
 import sys
+from PyQt5 import QtGui
 import PyQt5.QtCore as QtCore
 import PyQt5.QtGui as QtGui
 from PyQt5.QtCore import pyqtSignal
@@ -6,7 +7,7 @@ from PyQt5.QtGui import QIcon
 from PyQt5.QtWidgets import QMainWindow, QApplication, QDockWidget, QMessageBox
 from MainEvent import Event
 from RegEvent import reg
-from ui.main_ui_teacher import Ui_MainWindow
+from ui.ui_main_ui_teacher import Ui_MainWindow
 from ui.register import Ui_DockWidget
 import login_teacher
 from ui.css_init import main_style
@@ -158,7 +159,11 @@ class main_ui(QMainWindow,Ui_MainWindow):
         print('释放信号')
         self.init()
 
-
+    def resizeEvent(self, event):
+        if self.width() < 600:
+            self.Image.hide()
+        else:
+            self.Image.show()
 
     def show_reg_ui(self):
         reg = reg_ui()
@@ -178,6 +183,7 @@ class main_ui(QMainWindow,Ui_MainWindow):
         self.signature_fill.triggered.connect(lambda:self.main_widget.setCurrentIndex(1))
         self.assess.triggered.connect(lambda:self.main_widget.setCurrentIndex(2))
         self.merge.triggered.connect(lambda:self.main_widget.setCurrentIndex(3))
+        self.doc_to_docx.triggered.connect(lambda:self.main_widget.setCurrentIndex(4))
         self.choice_sig_path.clicked.connect(self.controller.choice_Sig_file)
         self.run_signature.clicked.connect(self.controller.run_sigature)
         self.zdls_add.clicked.connect(self.controller.choice_zdls_file)
@@ -238,9 +244,6 @@ if __name__ == '__main__':
     else:
         app = QApplication(sys.argv)
 
-    font = app.font()
-    font.setPointSize(10)
-    app.setFont(font)
     fc = main_ui()
     fc.show()
     fc.init()
