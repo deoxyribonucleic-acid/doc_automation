@@ -14,12 +14,11 @@ from PyQt5.QtWidgets import *
 
 
 import ui.back
-
 class Ui_MainWindow(object):
     def setupUi(self, MainWindow):
         if not MainWindow.objectName():
             MainWindow.setObjectName(u"MainWindow")
-        MainWindow.resize(477, 500)
+        MainWindow.resize(800, 600)
         sizePolicy = QSizePolicy(QSizePolicy.Preferred, QSizePolicy.Preferred)
         sizePolicy.setHorizontalStretch(0)
         sizePolicy.setVerticalStretch(0)
@@ -132,14 +131,7 @@ class Ui_MainWindow(object):
         self.add_stu_btn.setSizePolicy(sizePolicy3)
         self.add_stu_btn.setMinimumSize(QSize(75, 30))
         self.add_stu_btn.setMaximumSize(QSize(100, 16777215))
-        font3 = QFont()
-        font3.setFamily(u"\u601d\u6e90\u9ed1\u4f53 CN Normal")
-        font3.setPointSize(13)
-        font3.setBold(False)
-        font3.setItalic(False)
-        font3.setWeight(50)
-        self.add_stu_btn.setFont(font3)
-        self.add_stu_btn.setStyleSheet(u"font: 13pt \"\u601d\u6e90\u9ed1\u4f53 CN Normal\";")
+        self.add_stu_btn.setFont(font2)
 
         self.stu_info.addWidget(self.add_stu_btn)
 
@@ -182,14 +174,14 @@ class Ui_MainWindow(object):
         sizePolicy4.setHeightForWidth(self.xzcy_sig.sizePolicy().hasHeightForWidth())
         self.xzcy_sig.setSizePolicy(sizePolicy4)
         self.xzcy_sig.setMinimumSize(QSize(40, 30))
-        font4 = QFont()
-        font4.setFamily(u"Segoe UI")
-        font4.setPointSize(10)
-        font4.setBold(False)
-        font4.setItalic(False)
-        font4.setWeight(50)
-        font4.setKerning(True)
-        self.xzcy_sig.setFont(font4)
+        font3 = QFont()
+        font3.setFamily(u"Segoe UI")
+        font3.setPointSize(10)
+        font3.setBold(False)
+        font3.setItalic(False)
+        font3.setWeight(50)
+        font3.setKerning(True)
+        self.xzcy_sig.setFont(font3)
         self.xzcy_sig.setLayoutDirection(Qt.RightToLeft)
         self.xzcy_sig.setStyleSheet(u"background-color: rgba(255, 255, 255, 0);\n"
 "color: rgb(255, 255, 255);")
@@ -225,7 +217,7 @@ class Ui_MainWindow(object):
         sizePolicy4.setHeightForWidth(self.xzzz_sig.sizePolicy().hasHeightForWidth())
         self.xzzz_sig.setSizePolicy(sizePolicy4)
         self.xzzz_sig.setMinimumSize(QSize(40, 30))
-        self.xzzz_sig.setFont(font4)
+        self.xzzz_sig.setFont(font3)
         self.xzzz_sig.setLayoutDirection(Qt.RightToLeft)
         self.xzzz_sig.setStyleSheet(u"background-color: rgba(255, 255, 255, 0);\n"
 "color: rgb(255, 255, 255);")
@@ -258,7 +250,7 @@ class Ui_MainWindow(object):
         sizePolicy4.setHeightForWidth(self.zdls_sig.sizePolicy().hasHeightForWidth())
         self.zdls_sig.setSizePolicy(sizePolicy4)
         self.zdls_sig.setMinimumSize(QSize(40, 30))
-        self.zdls_sig.setFont(font4)
+        self.zdls_sig.setFont(font3)
         self.zdls_sig.setLayoutDirection(Qt.RightToLeft)
         self.zdls_sig.setStyleSheet(u"background-color: rgba(255, 255, 255, 0);\n"
 "color: rgb(255, 255, 255);")
@@ -349,7 +341,7 @@ class Ui_MainWindow(object):
         sizePolicy2.setHeightForWidth(self.name_label.sizePolicy().hasHeightForWidth())
         self.name_label.setSizePolicy(sizePolicy2)
         self.name_label.setMinimumSize(QSize(0, 30))
-        self.name_label.setFont(font4)
+        self.name_label.setFont(font3)
 
         self.horizontalLayout_11.addWidget(self.name_label)
 
@@ -367,7 +359,7 @@ class Ui_MainWindow(object):
         sizePolicy2.setHeightForWidth(self.id_label.sizePolicy().hasHeightForWidth())
         self.id_label.setSizePolicy(sizePolicy2)
         self.id_label.setMinimumSize(QSize(0, 30))
-        self.id_label.setFont(font4)
+        self.id_label.setFont(font3)
 
         self.horizontalLayout_11.addWidget(self.id_label)
 
@@ -394,7 +386,7 @@ class Ui_MainWindow(object):
         sizePolicy2.setHeightForWidth(self.academy_label.sizePolicy().hasHeightForWidth())
         self.academy_label.setSizePolicy(sizePolicy2)
         self.academy_label.setMinimumSize(QSize(0, 30))
-        self.academy_label.setFont(font4)
+        self.academy_label.setFont(font3)
 
         self.horizontalLayout_12.addWidget(self.academy_label)
 
@@ -412,7 +404,7 @@ class Ui_MainWindow(object):
         sizePolicy2.setHeightForWidth(self.major_label.sizePolicy().hasHeightForWidth())
         self.major_label.setSizePolicy(sizePolicy2)
         self.major_label.setMinimumSize(QSize(0, 30))
-        self.major_label.setFont(font4)
+        self.major_label.setFont(font3)
 
         self.horizontalLayout_12.addWidget(self.major_label)
 
@@ -439,7 +431,7 @@ class Ui_MainWindow(object):
         sizePolicy2.setHeightForWidth(self.grade_label.sizePolicy().hasHeightForWidth())
         self.grade_label.setSizePolicy(sizePolicy2)
         self.grade_label.setMinimumSize(QSize(0, 30))
-        self.grade_label.setFont(font4)
+        self.grade_label.setFont(font3)
 
         self.horizontalLayout_19.addWidget(self.grade_label)
 
@@ -457,7 +449,7 @@ class Ui_MainWindow(object):
         sizePolicy2.setHeightForWidth(self.banji_label.sizePolicy().hasHeightForWidth())
         self.banji_label.setSizePolicy(sizePolicy2)
         self.banji_label.setMinimumSize(QSize(0, 30))
-        self.banji_label.setFont(font4)
+        self.banji_label.setFont(font3)
         self.banji_label.setStyleSheet(u"")
 
         self.horizontalLayout_19.addWidget(self.banji_label)
@@ -489,7 +481,7 @@ class Ui_MainWindow(object):
         sizePolicy2.setHeightForWidth(self.title_label.sizePolicy().hasHeightForWidth())
         self.title_label.setSizePolicy(sizePolicy2)
         self.title_label.setMinimumSize(QSize(0, 30))
-        self.title_label.setFont(font4)
+        self.title_label.setFont(font3)
 
         self.horizontalLayout_20.addWidget(self.title_label)
 
@@ -514,7 +506,7 @@ class Ui_MainWindow(object):
         sizePolicy2.setHeightForWidth(self.teacher_label.sizePolicy().hasHeightForWidth())
         self.teacher_label.setSizePolicy(sizePolicy2)
         self.teacher_label.setMinimumSize(QSize(0, 30))
-        self.teacher_label.setFont(font4)
+        self.teacher_label.setFont(font3)
 
         self.horizontalLayout_21.addWidget(self.teacher_label)
 
@@ -533,7 +525,7 @@ class Ui_MainWindow(object):
         sizePolicy2.setHeightForWidth(self.zhichen_label.sizePolicy().hasHeightForWidth())
         self.zhichen_label.setSizePolicy(sizePolicy2)
         self.zhichen_label.setMinimumSize(QSize(0, 30))
-        self.zhichen_label.setFont(font4)
+        self.zhichen_label.setFont(font3)
         self.zhichen_label.setStyleSheet(u"")
 
         self.horizontalLayout_21.addWidget(self.zhichen_label)
@@ -572,7 +564,7 @@ class Ui_MainWindow(object):
         sizePolicy2.setHeightForWidth(self.output_label.sizePolicy().hasHeightForWidth())
         self.output_label.setSizePolicy(sizePolicy2)
         self.output_label.setMinimumSize(QSize(0, 30))
-        self.output_label.setFont(font4)
+        self.output_label.setFont(font3)
 
         self.horizontalLayout_22.addWidget(self.output_label)
 
@@ -634,7 +626,7 @@ class Ui_MainWindow(object):
 
         self.path_label = QLabel(self.signature_fill_2)
         self.path_label.setObjectName(u"path_label")
-        self.path_label.setFont(font4)
+        self.path_label.setFont(font3)
 
         self.verticalLayout_5.addWidget(self.path_label)
 
@@ -697,7 +689,7 @@ class Ui_MainWindow(object):
         self.scrollArea.setWidgetResizable(True)
         self.scrollAreaWidgetContents = QWidget()
         self.scrollAreaWidgetContents.setObjectName(u"scrollAreaWidgetContents")
-        self.scrollAreaWidgetContents.setGeometry(QRect(0, 0, 369, 325))
+        self.scrollAreaWidgetContents.setGeometry(QRect(0, 0, 722, 485))
         sizePolicy10 = QSizePolicy(QSizePolicy.Expanding, QSizePolicy.Expanding)
         sizePolicy10.setHorizontalStretch(0)
         sizePolicy10.setVerticalStretch(0)
@@ -1170,7 +1162,7 @@ class Ui_MainWindow(object):
         self.output_label_3 = QLabel(self.page)
         self.output_label_3.setObjectName(u"output_label_3")
         self.output_label_3.setMinimumSize(QSize(0, 30))
-        self.output_label_3.setFont(font4)
+        self.output_label_3.setFont(font3)
 
         self.horizontalLayout_23.addWidget(self.output_label_3)
 
@@ -1223,7 +1215,7 @@ class Ui_MainWindow(object):
 
         self.output_label_4 = QLabel(self.page_2)
         self.output_label_4.setObjectName(u"output_label_4")
-        self.output_label_4.setFont(font4)
+        self.output_label_4.setFont(font3)
 
         self.verticalLayout_3.addWidget(self.output_label_4)
 
@@ -1252,7 +1244,7 @@ class Ui_MainWindow(object):
 
         self.output_label_2 = QLabel(self.page_2)
         self.output_label_2.setObjectName(u"output_label_2")
-        self.output_label_2.setFont(font4)
+        self.output_label_2.setFont(font3)
         self.output_label_2.setTextFormat(Qt.AutoText)
         self.output_label_2.setAlignment(Qt.AlignLeading|Qt.AlignLeft|Qt.AlignVCenter)
 
@@ -1263,12 +1255,12 @@ class Ui_MainWindow(object):
         self.output_input_4 = QLineEdit(self.page_2)
         self.output_input_4.setObjectName(u"output_input_4")
         self.output_input_4.setMinimumSize(QSize(0, 30))
-        font5 = QFont()
-        font5.setFamily(u"Segoe UI")
-        font5.setBold(False)
-        font5.setItalic(False)
-        font5.setWeight(50)
-        self.output_input_4.setFont(font5)
+        font4 = QFont()
+        font4.setFamily(u"Segoe UI")
+        font4.setBold(False)
+        font4.setItalic(False)
+        font4.setWeight(50)
+        self.output_input_4.setFont(font4)
         self.output_input_4.setReadOnly(True)
 
         self.horizontalLayout_7.addWidget(self.output_input_4)
@@ -1280,7 +1272,7 @@ class Ui_MainWindow(object):
         self.choice_output_4.setSizePolicy(sizePolicy8)
         self.choice_output_4.setMinimumSize(QSize(75, 30))
         self.choice_output_4.setMaximumSize(QSize(75, 30))
-        self.choice_output_4.setFont(font5)
+        self.choice_output_4.setFont(font4)
 
         self.horizontalLayout_7.addWidget(self.choice_output_4)
 
@@ -1314,7 +1306,7 @@ class Ui_MainWindow(object):
 
         self.path_label_2 = QLabel(self.page_3)
         self.path_label_2.setObjectName(u"path_label_2")
-        self.path_label_2.setFont(font4)
+        self.path_label_2.setFont(font3)
 
         self.verticalLayout_4.addWidget(self.path_label_2)
 
@@ -1378,12 +1370,12 @@ class Ui_MainWindow(object):
         MainWindow.setStatusBar(self.statusbar)
         self.toolBar = QToolBar(MainWindow)
         self.toolBar.setObjectName(u"toolBar")
-        font6 = QFont()
-        font6.setPointSize(10)
-        font6.setBold(False)
-        font6.setItalic(False)
-        font6.setWeight(50)
-        self.toolBar.setFont(font6)
+        font5 = QFont()
+        font5.setPointSize(10)
+        font5.setBold(False)
+        font5.setItalic(False)
+        font5.setWeight(50)
+        self.toolBar.setFont(font5)
         self.toolBar.setAutoFillBackground(False)
         MainWindow.addToolBar(Qt.TopToolBarArea, self.toolBar)
 #if QT_CONFIG(shortcut)

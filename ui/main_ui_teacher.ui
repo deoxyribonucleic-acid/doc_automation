@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>968</width>
-    <height>898</height>
+    <width>800</width>
+    <height>600</height>
    </rect>
   </property>
   <property name="sizePolicy">
@@ -220,14 +220,11 @@ color: rgb(255, 255, 255);</string>
                  <property name="font">
                   <font>
                    <family>Segoe UI</family>
-                   <pointsize>13</pointsize>
+                   <pointsize>10</pointsize>
                    <weight>50</weight>
                    <italic>false</italic>
                    <bold>false</bold>
                   </font>
-                 </property>
-                 <property name="styleSheet">
-                  <string notr="true">font: 13pt &quot;思源黑体 CN Normal&quot;;</string>
                  </property>
                  <property name="text">
                   <string>手动录入</string>
@@ -665,8 +662,8 @@ color: rgb(255, 255, 255);</string>
                 <rect>
                  <x>0</x>
                  <y>0</y>
-                 <width>730</width>
-                 <height>601</height>
+                 <width>284</width>
+                 <height>348</height>
                 </rect>
                </property>
                <layout class="QVBoxLayout" name="verticalLayout_6">
@@ -1604,8 +1601,8 @@ color: rgb(255, 255, 255);</string>
                 <rect>
                  <x>0</x>
                  <y>0</y>
-                 <width>706</width>
-                 <height>459</height>
+                 <width>554</width>
+                 <height>253</height>
                 </rect>
                </property>
                <property name="sizePolicy">
