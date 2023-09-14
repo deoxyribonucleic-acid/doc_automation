@@ -624,7 +624,7 @@ color: rgb(255, 255, 255);</string>
 </string>
           </property>
           <property name="currentIndex">
-           <number>0</number>
+           <number>2</number>
           </property>
           <widget class="QWidget" name="template_generation_2">
            <layout class="QGridLayout" name="gridLayout_6">
@@ -1604,8 +1604,8 @@ color: rgb(255, 255, 255);</string>
                 <rect>
                  <x>0</x>
                  <y>0</y>
-                 <width>406</width>
-                 <height>511</height>
+                 <width>706</width>
+                 <height>459</height>
                 </rect>
                </property>
                <property name="sizePolicy">
@@ -1648,9 +1648,7 @@ color: rgb(255, 255, 255);</string>
                    <bool>false</bool>
                   </property>
                   <property name="styleSheet">
-                   <string notr="true">backgroundcolor:rgb(255, 0, 0);
-
- QLineEdit{
+                   <string notr="true"> QLineEdit{
                 background: #F5F5F7;
                     border-radius: 5px;
                 }

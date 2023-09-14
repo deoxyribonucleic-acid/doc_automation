@@ -205,8 +205,8 @@ class Event:
         stu_data={
             "ID": self.parent.id_input.text(),
             "name": self.parent.name_input.text(),
-            "academy": self.parent.academy_input.text(),
-            "major": self.parent.major_input.text(),
+            "academy": self.parent.school_select.currentText(),
+            "major": self.parent.major_select.currentText(),
             "grade": self.parent.grade_input.text(),
             "banji": self.parent.banji_input.text(),
 

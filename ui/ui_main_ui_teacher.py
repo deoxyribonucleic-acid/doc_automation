@@ -713,9 +713,7 @@ class Ui_MainWindow(object):
         self.tabWidget.setObjectName(u"tabWidget")
         self.tabWidget.setFont(font2)
         self.tabWidget.setAutoFillBackground(False)
-        self.tabWidget.setStyleSheet(u"backgroundcolor:rgb(255, 0, 0);\n"
-"\n"
-" QLineEdit{\n"
+        self.tabWidget.setStyleSheet(u" QLineEdit{\n"
 "                background: #F5F5F7;\n"
 "                    border-radius: 5px;\n"
 "                }\n"
