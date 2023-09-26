@@ -2,7 +2,8 @@ import os,sys
 
 import time
 if sys.platform == 'darwin' or sys.platform == 'linux':
-    import doc2docx
+    pass
+    #import doc2docx
 if sys.platform == 'win32' :
     from win32com import client as wc
     import win32com
@@ -32,7 +33,8 @@ def doc_to_docx(file_path):
     res_path=file_path
     if os.path.splitext(file_path)[1] == '.doc':
         if sys.platform == 'darwin' or sys.platform == 'linux':
-            doc2docx.doc_to_docx(file_path)
+            pass
+            #doc2docx.doc_to_docx(file_path)
         if sys.platform == 'win32' :
             word = wc.Dispatch("Word.Application")  # 打开word应用程序
             doc = word.Documents.Open(file_path,ReadOnly = 1)  # 打开word文件

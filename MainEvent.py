@@ -88,7 +88,7 @@ class Event:
         }
         save_path=self.parent.output_input.text()+'/'
         try:
-            print('这里',save_path)
+            print('保存路径',save_path)
             if not save_path == '/':
                 Template(save_path,stu_data)
                 QMessageBox.about(self.parent, "success", "生成成功!")
@@ -261,7 +261,7 @@ class Event:
             ass.update({'total': total})
             stu_data.update(ass)
             print(stu_data)
-            print('这里', self.parent.ass_out_path.text())
+            print('导出？', self.parent.ass_out_path.text())
             if not self.parent.ass_out_path.text()=='':
                 try:
                     res_path = assess(index, self.parent.ass_out_path.text(), stu_data)
@@ -274,10 +274,6 @@ class Event:
 
         except:
             QMessageBox.about(self.parent, "error", "请先完善评分信息")
-
-
-
-
 
     #合并文件
     def choice_total_file(self):
@@ -331,7 +327,7 @@ class Event:
 
     def update_db(self,id,attribute,data):
         self.student_operate.updata_item(id,attribute,data)
-        print('{}更新{}为{}'.format(id,attribute,data))
+        print('{}尝试更新{}为{}'.format(id,attribute,data))
               
     def setup_combobox(self):
         self.major_db=pd.read_excel('database/majors.xlsx')
@@ -353,3 +349,42 @@ class Event:
         self.parent.update(self.parent.id_input.text(),'major',self.parent.major_select.currentText())
         self.parent.update(self.parent.id_input.text(),'academy',self.parent.school_select.currentText())
 
+    def login2template(self):
+        self.parent.stackedWidget.setCurrentIndex(0)
+        self.parent.main_widget.setCurrentIndex(0)
+        self.parent.toolBar.show()
+        self.parent.doc_to_docx.setVisible(False)
+
+    def login2signature(self):
+        self.parent.stackedWidget.setCurrentIndex(0)
+        self.parent.main_widget.setCurrentIndex(1)
+        self.parent.toolBar.show()
+        self.parent.doc_to_docx.setVisible(False)
+
+    def login2assess(self):
+        self.parent.stackedWidget.setCurrentIndex(0)
+        self.parent.main_widget.setCurrentIndex(2)
+        self.parent.toolBar.show()
+        self.parent.doc_to_docx.setVisible(False)
+
+    def login2merge(self):
+        self.parent.stackedWidget.setCurrentIndex(0)
+        self.parent.main_widget.setCurrentIndex(3)
+        self.parent.toolBar.show()
+        self.parent.doc_to_docx.setVisible(False)
+
+    def student_mode(self):
+        print('学生模式')
+        self.parent.pushButton_2.setEnabled(False)
+        self.parent.pushButton_3.setEnabled(False)
+        self.parent.signature_fill.setVisible(False)
+        self.parent.assess.setVisible(False)
+        self.parent.doc_to_docx.setVisible(False)
+
+    def teacher_mode(self):
+        print('teacher')
+        self.parent.pushButton_2.setEnabled(True)
+        self.parent.pushButton_3.setEnabled(True)
+        self.parent.signature_fill.setVisible(True)
+        self.parent.assess.setVisible(True)
+        self.parent.doc_to_docx.setVisible(False)

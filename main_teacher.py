@@ -4,10 +4,10 @@ import PyQt5.QtCore as QtCore
 import PyQt5.QtGui as QtGui
 from PyQt5.QtCore import pyqtSignal
 from PyQt5.QtGui import QIcon
-from PyQt5.QtWidgets import QMainWindow, QApplication, QDockWidget, QMessageBox
+from PyQt5.QtWidgets import *
 from MainEvent import Event
 from RegEvent import reg
-from ui.ui_main_ui_teacher import Ui_MainWindow
+from ui.main_ui_teacher import Ui_MainWindow
 from ui.register import Ui_DockWidget
 import login_teacher
 from ui.css_init import main_style
@@ -32,7 +32,7 @@ class reg_ui(QDockWidget,Ui_DockWidget):
     def init(self):
         self.dockWidgetContents.setStyleSheet(main_style.reg_window())
         self.setStyleSheet(main_style.reg_mess())
-
+# main window should edit
 class main_ui(QMainWindow,Ui_MainWindow):
     def __init__(self):
         super(main_ui,self).__init__()
@@ -41,6 +41,9 @@ class main_ui(QMainWindow,Ui_MainWindow):
         self.setupUi(self)
         self.bind()
         self.css_init()
+        self.stackedWidget.setCurrentIndex(1)
+        self.toolBar.hide()
+        self.radioButton.setChecked(True)
 
     def css_init(self):
         self.setStyleSheet(main_style.main_window())
@@ -84,7 +87,7 @@ class main_ui(QMainWindow,Ui_MainWindow):
         while(True):
             stu_table=self.controller.read_all_student()
             if stu_table.shape[0]==0:
-                #self.controller.choose_and_import()
+                self.controller.choose_and_import()
                 QMessageBox.warning(self,"警告","学生列表为空，请录入或导入学生信息！")
                 break
             else:
@@ -161,9 +164,11 @@ class main_ui(QMainWindow,Ui_MainWindow):
 
     def resizeEvent(self, event):
         if self.width() < 600:
-            self.Image.hide()
+            pass
+            #self.Image.hide()
         else:
-            self.Image.show()
+            pass
+            #self.Image.show()
 
     def show_reg_ui(self):
         reg = reg_ui()
@@ -199,6 +204,13 @@ class main_ui(QMainWindow,Ui_MainWindow):
         #self.login_btn.clicked.connect(self.show_web)
         self.login_btn.clicked.connect(self.import_excel)
 
+        self.pushButton.clicked.connect(self.controller.login2template)
+        self.pushButton_2.clicked.connect(self.controller.login2signature)
+        self.pushButton_3.clicked.connect(self.controller.login2assess)
+        self.pushButton_4.clicked.connect(self.controller.login2merge)
+
+        self.radioButton.toggled.connect(self.controller.teacher_mode)
+        self.radioButton_2.toggled.connect(self.controller.student_mode)
 
         #修改信息
         self.banji_input.editingFinished.connect(lambda:self.update(self.id_input.text(),'banji',self.banji_input.text()))

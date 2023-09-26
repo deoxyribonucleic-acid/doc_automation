@@ -2,4 +2,10 @@
   <qresource prefix="back">
     <file>back_img.png</file>
   </qresource>
+  <qresource prefix="icon">
+    <file>icons/Usage statistics.png</file>
+    <file>icons/Menu Asset account.png</file>
+    <file>icons/User log.png</file>
+    <file>icons/Menu Certificate.png</file>
+  </qresource>
 </RCC>
