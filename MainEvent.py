@@ -261,6 +261,7 @@ class Event:
             ass.update({'total': total})
             stu_data.update(ass)
             print(stu_data)
+            #TODO 校验一下成绩再生成
             print('导出？', self.parent.ass_out_path.text())
             if not self.parent.ass_out_path.text()=='':
                 try:
@@ -326,8 +327,10 @@ class Event:
                 os.rmdir(os.path.join(root, name))  # 删除一个空目录
 
     def update_db(self,id,attribute,data):
-        self.student_operate.updata_item(id,attribute,data)
-        print('{}尝试更新{}为{}'.format(id,attribute,data))
+        if self.student_operate.updata_item(id,attribute,data):
+            print('{}更新{}为{}'.format(id,attribute,data))
+        else:
+            print('校验不通过，更新失败')
               
     def setup_combobox(self):
         self.major_db=pd.read_excel('database/majors.xlsx')
