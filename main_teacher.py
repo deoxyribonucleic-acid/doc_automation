@@ -1,15 +1,11 @@
 import sys
-from PyQt5 import QtGui
 import PyQt5.QtCore as QtCore
-import PyQt5.QtGui as QtGui
 from PyQt5.QtCore import pyqtSignal
-from PyQt5.QtGui import QIcon
-from PyQt5.QtWidgets import *
+from PyQt5.QtWidgets import QMainWindow, QDockWidget, QMessageBox, QApplication
 from MainEvent import Event
 from RegEvent import reg
 from ui.main_ui_teacher import Ui_MainWindow
 from ui.register import Ui_DockWidget
-import login_teacher
 from ui.css_init import main_style
 from ui import excelImport
 from tools.db_operate import dbutils
@@ -23,7 +19,10 @@ class reg_ui(QDockWidget,Ui_DockWidget):
         self.activateWindow()
         self.setupUi(self)
         self.bind()
-        self.controller.init()
+        if not self.controller.init():
+            QMessageBox.warning(self.parent(),"警告","专业信息表缺失，程序即将退出")
+            # Wait 2s
+            QtCore.QTimer.singleShot(2000, QtCore.QCoreApplication.instance().quit)
         self.init()
 
     def bind(self):
@@ -98,7 +97,7 @@ class main_ui(QMainWindow,Ui_MainWindow):
     def init_info(self):
         stu_table=self.controller.read_all_student()
         stu = stu_table.head(1)
-        print(stu)
+        # print(stu)
         self.id_input.setText(str(stu.index.values[0]))
         self.name_input.setText(str(stu.stu_name.values[0]))
         self.controller.setup_combobox()
@@ -111,7 +110,36 @@ class main_ui(QMainWindow,Ui_MainWindow):
         self.title_input.setText(str(stu.title.values[0]))
         self.teacher_input.setText(str(stu.teacher.values[0]))
         self.zhichen_input.setText(str(stu.zhichen.values[0]))
-        print(self.banji_input.text())
+
+        self.com_1_1.setText(stu.com_1_1.values[0])
+        self.com_1_2.setText(stu.com_1_2.values[0])
+        self.com_1_3.setText(stu.com_1_3.values[0])
+        self.com_1_4.setText(stu.com_1_4.values[0])
+        self.com_1_5.setText(stu.com_1_5.values[0])
+        self.com_1_6.setText(stu.com_1_6.values[0])
+        self.com_1_7.setText(stu.com_1_7.values[0])
+        self.com_1_8.setText(stu.com_1_8.values[0])
+        self.com_1_9.setText(stu.com_1_9.values[0])
+        self.com_2_1.setText(stu.com_2_1.values[0])
+        self.com_2_2.setText(stu.com_2_2.values[0])
+        self.com_2_3.setText(stu.com_2_3.values[0])
+        self.com_2_4.setText(stu.com_2_4.values[0])
+        self.com_2_5.setText(stu.com_2_5.values[0])
+        self.com_2_6.setText(stu.com_2_6.values[0])
+        self.com_2_7.setText(stu.com_2_7.values[0])
+        self.com_2_8.setText(stu.com_2_8.values[0])
+        self.com_3_1.setText(stu.com_3_1.values[0])
+        self.com_3_2.setText(stu.com_3_2.values[0])
+        self.com_3_3.setText(stu.com_3_3.values[0])
+        self.com_3_4.setText(stu.com_3_4.values[0])
+        self.com_3_5.setText(stu.com_3_5.values[0])
+        self.com_3_6.setText(stu.com_3_6.values[0])
+        self.com_3_7.setText(stu.com_3_7.values[0])
+        self.com_3_8.setText(stu.com_3_8.values[0])
+        self.com_3_9.setText(stu.com_3_9.values[0])
+        self.com_3_10.setText(stu.com_3_10.values[0])
+
+        # print(self.banji_input.text())
         if '?' in self.banji_input.text():
             self.banji_input.setStyleSheet(main_style.input_box_s())
 
@@ -122,11 +150,11 @@ class main_ui(QMainWindow,Ui_MainWindow):
             zdls = stu.zdls.values[0].split(',')
             self.zdls_sig.setText('指导老师已选择:' + str(len(zdls)))
             self.controller.zdls = zdls
-            print('contro.zdls', zdls)
+            # print('contro.zdls', zdls)
 
         if type(stu.xzzz.values[0]) == str:
             xzzz = stu.xzzz.values[0].split(',')
-            print('xzzz',xzzz)
+            # print('xzzz',xzzz)
             self.xzzz_sig.setText('小组组长已选择:' + str(len(xzzz)))
             self.controller.xzzz = xzzz
 
@@ -140,26 +168,26 @@ class main_ui(QMainWindow,Ui_MainWindow):
             self.choice_stu.addItem(item)
 
 
-    def show_web(self):
-        window = login_teacher.WebView()
-        window.resize(1440, 720)
-        window.setMinimumWidth(800)
-        window.setWindowTitle('登录')
-        window.setWindowIcon(QIcon(window.get_resource_path(login_teacher.icon_path + "ico.png")))
-        window.show()
+    # def show_web(self):
+    #     window = login_teacher.WebView()
+    #     window.resize(1440, 720)
+    #     window.setMinimumWidth(800)
+    #     window.setWindowTitle('登录')
+    #     window.setWindowIcon(QIcon(window.get_resource_path(login_teacher.icon_path + "ico.png")))
+    #     window.show()
         # window.setWindowState(Qt.WindowModal)
         # window.setWindowState(Qt.WindowMinimized)
         # window.setWindowFlags(Qt.Popup)
         #window.update_db.connect(self.update_inform)
 
     def import_excel(self):
-        self.excel_window=excelImport.ExcelReader()
+        self.excel_window=excelImport.excel_ui()
         self.excel_window.show()
         self.excel_window.import_confirmed.connect(lambda:dbutils.batch_import(self.excel_window.file_path,self.controller.student_operate))
         self.controller.student_operate.import_complete.connect(self.update_inform)
 
     def update_inform(self):
-        print('释放信号')
+        # print('释放信号')
         self.init()
 
     def resizeEvent(self, event):

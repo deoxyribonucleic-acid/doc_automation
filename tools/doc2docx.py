@@ -10,8 +10,7 @@ if sys.platform == 'win32' :
     import win32com.client
 
 def closesoft():
-    print('''挂载程序关闭中……
-          ''')
+    # print('''挂载程序关闭中……''')
     if sys.platform == 'darwin' or sys.platform == 'linux':
         return
     if sys.platform == 'win32' :
@@ -45,7 +44,7 @@ def doc_to_docx(file_path):
         os.remove(file_path)
         time.sleep(0.5)
     return res_path
-    print("完成！")
+    # print("完成！")
 
 
 if __name__ == '__main__':

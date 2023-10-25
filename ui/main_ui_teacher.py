@@ -8,9 +8,12 @@
 ## WARNING! All changes made in this file will be lost when recompiling UI file!
 ################################################################################
 
-from PyQt5.QtCore import *
-from PyQt5.QtGui import *
-from PyQt5.QtWidgets import *
+from PyQt5.QtGui import QFont, QIcon
+from PyQt5.QtCore import Qt, QSize, QRect, QMetaObject, QCoreApplication
+from PyQt5.QtWidgets import QSizePolicy, QWidget, QStackedWidget, QFrame, QScrollArea, QVBoxLayout, QLabel, QHBoxLayout, \
+        QSpacerItem, QComboBox, QPushButton, QLineEdit, QGridLayout, QRadioButton, QAction ,QToolBar, QScrollArea,  \
+        QAbstractScrollArea, QSizePolicy, QLayout, QTabWidget,QListWidget
+
 import ui.ui_back
 
 class Ui_MainWindow(object):
@@ -88,7 +91,6 @@ class Ui_MainWindow(object):
         self.current_stu_label.setObjectName(u"current_stu_label")
         self.current_stu_label.setMinimumSize(QSize(0, 30))
         font2 = QFont()
-        font2.setFamily(u"Segoe UI")
         font2.setPointSize(14)
         font2.setBold(False)
         font2.setItalic(False)
@@ -115,7 +117,6 @@ class Ui_MainWindow(object):
         self.choice_stu.setSizePolicy(sizePolicy2)
         self.choice_stu.setMinimumSize(QSize(0, 30))
         font3 = QFont()
-        font3.setFamily(u"Segoe UI")
         font3.setPointSize(10)
         font3.setBold(False)
         font3.setItalic(False)
@@ -181,7 +182,6 @@ class Ui_MainWindow(object):
         self.xzcy_sig.setSizePolicy(sizePolicy4)
         self.xzcy_sig.setMinimumSize(QSize(40, 30))
         font4 = QFont()
-        font4.setFamily(u"Segoe UI")
         font4.setPointSize(10)
         font4.setBold(False)
         font4.setItalic(False)
@@ -321,7 +321,7 @@ class Ui_MainWindow(object):
         self.scrollArea_2.setWidgetResizable(True)
         self.scrollAreaWidgetContents_2 = QWidget()
         self.scrollAreaWidgetContents_2.setObjectName(u"scrollAreaWidgetContents_2")
-        self.scrollAreaWidgetContents_2.setGeometry(QRect(0, 0, 234, 386))
+        self.scrollAreaWidgetContents_2.setGeometry(QRect(0, 0, 236, 386))
         self.verticalLayout_6 = QVBoxLayout(self.scrollAreaWidgetContents_2)
         self.verticalLayout_6.setObjectName(u"verticalLayout_6")
         self.title_1 = QLabel(self.scrollAreaWidgetContents_2)
@@ -1262,7 +1262,6 @@ class Ui_MainWindow(object):
         self.output_input_4.setObjectName(u"output_input_4")
         self.output_input_4.setMinimumSize(QSize(0, 30))
         font5 = QFont()
-        font5.setFamily(u"Segoe UI")
         font5.setBold(False)
         font5.setItalic(False)
         font5.setWeight(50)
@@ -1502,12 +1501,7 @@ class Ui_MainWindow(object):
         self.toolBar = QToolBar(MainWindow)
         self.toolBar.setObjectName(u"toolBar")
         self.toolBar.setEnabled(True)
-        font7 = QFont()
-        font7.setPointSize(10)
-        font7.setBold(False)
-        font7.setItalic(False)
-        font7.setWeight(50)
-        self.toolBar.setFont(font7)
+        self.toolBar.setFont(font3)
         self.toolBar.setAutoFillBackground(False)
         MainWindow.addToolBar(Qt.TopToolBarArea, self.toolBar)
 #if QT_CONFIG(shortcut)
@@ -1562,7 +1556,7 @@ class Ui_MainWindow(object):
 
         self.retranslateUi(MainWindow)
 
-        self.stackedWidget.setCurrentIndex(1)
+        self.stackedWidget.setCurrentIndex(0)
         self.main_widget.setCurrentIndex(3)
         self.tabWidget.setCurrentIndex(0)
 

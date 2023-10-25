@@ -6,18 +6,19 @@ import sys
 sys.path.append("..")
 sys.path.append(".")
 from tools.db_operate import dbutils as dbutils
-
 class reg:
 
     def __init__(self,parent):
         self.parent=parent
         self.student_operate=student()
         self.parent.setWindowModality(QtCore.Qt.ApplicationModal)
-        self.major_db=pd.read_excel('database/majors.xlsx')
-
 
     def init(self):
         stu_list=self.student_operate.read_all_items()
+        try: 
+            self.major_db=pd.read_excel(getPath('database/majors.xlsx'))
+        except:
+            return False
         self.setup_combobox()
         if stu_list.shape[0] > 0:
             stu=stu_list.iloc[0]
@@ -27,9 +28,10 @@ class reg:
             self.parent.banji_input.setText(str(stu.banji))
             self.parent.teacher_input.setText(str(stu.teacher))
             self.parent.zhichen_input.setText(str(stu.zhichen))
+        return True
 
     def add_student(self):
-        print('执行添加')
+        # print('执行添加')
         items = {
             "ID": self.parent.id_input.text(),
             "stu_name": self.parent.name_input.text(),
@@ -54,11 +56,14 @@ class reg:
             QMessageBox.about(self.parent, "error", "录入失败")
 
     def setup_combobox(self):
-        print(self.major_db)
+        # print(self.major_db)
         school_list=self.major_db.columns.values.tolist()
         for school in school_list:
             self.parent.school_select.addItem(school)
-        self.setup_major()
+        try: 
+            self.setup_major()
+        except:
+            QMessageBox.about(self.parent, "error", "专业数据库缺失")
         self.parent.school_select.currentIndexChanged.connect(self.setup_major)
 
     def setup_major(self):

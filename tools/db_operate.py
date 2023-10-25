@@ -1,10 +1,10 @@
-
-from math import nan
 import os
 
 import pandas as pd
+from numpy import nan
 from PyQt5.QtCore import pyqtSignal,QObject
 from PyQt5.QtWidgets import QApplication, QMainWindow, QFileDialog, QMessageBox, QTableWidgetItem
+from tools.FileManager import getPath
 
 import re
 
@@ -12,12 +12,19 @@ class student(QObject):
     import_complete = pyqtSignal()
     def __init__(self):
         super(student, self).__init__()
-        db_path = os.path.join(os.getcwd(),'database')
-        self.table_path = os.path.join(db_path,'student.csv')
+        
+        self.table_path = getPath('database/student.csv')
+        if not os.path.exists(getPath('database')):
+            os.mkdir(getPath('database'))
         if not os.path.exists(self.table_path):
-            table=pd.DataFrame(columns=['ID','stu_name','academy','major','grade','banji','title','teacher','zhichen','zdls','xzzz','xzcy'])
+            table=pd.DataFrame(columns=['ID','stu_name','academy','major','grade','banji','title','teacher','zhichen','zdls','xzzz','xzcy',
+            'com_1_1','com_1_2','com_1_3','com_1_4','com_1_5','com_1_6','com_1_7','com_1_8','com_1_9',
+            'com_2_1','com_2_2','com_2_3','com_2_4','com_2_5','com_2_6','com_2_7','com_2_8',
+            'com_3_1','com_3_2','com_3_3','com_3_4','com_3_5','com_3_6','com_3_7','com_3_8','com_3_9','com_3_10'
+                                        ])
             table.to_csv(self.table_path,encoding='utf-8',index=False)
-        self.table=pd.read_csv(self.table_path,index_col='ID')
+        self.table=pd.read_csv(self.table_path,index_col='ID',dtype=str)
+        self.table.replace(nan, '')
 
 
     def add_item(self,item):
@@ -34,12 +41,42 @@ class student(QObject):
         item['zhichen'],
         '',
         '',
-        ''
+        '',
+        
+        '0',
+        '0',
+        '0',
+        '0',
+        '0',
+        '0',
+        '0',
+        '0',
+        '0',
+
+        '0',
+        '0',
+        '0',
+        '0',
+        '0',
+        '0',
+        '0',
+        '0',
+        '0',
+
+        '0',
+        '0',
+        '0',
+        '0',
+        '0',
+        '0',
+        '0',
+        '0',
+        '0',
         ]
-        #print('key',key)
-        #print('data',data)
+        # print('key',key)
+        # print('data',data)
         self.table.loc[key]=data
-        print(self.table)
+        # print(self.table)
         self.table.to_csv(self.table_path,index=True,index_label="ID",encoding='utf-8')
         self.table = pd.read_csv(self.table_path, index_col='ID',encoding='utf-8')
 
@@ -48,32 +85,32 @@ class student(QObject):
         self.table = pd.read_csv(self.table_path, index_col='ID',encoding='utf-8')
         if case == 'zdls':
             self.table.loc[ID,'zdls']=path
-            print('path',self.table.loc[ID,'zdls'])
+            # print('path',self.table.loc[ID,'zdls'])
             self.table.to_csv(self.table_path, index=True, index_label="ID",encoding='utf-8')
 
         if case == 'xzzz':
             self.table.loc[ID,'xzzz']=path
-            print('path',self.table.loc[ID,'xzzz'])
+            # print('path',self.table.loc[ID,'xzzz'])
             self.table.to_csv(self.table_path, index=True, index_label="ID",encoding='utf-8')
 
         if case == 'xzcy':
             self.table.loc[ID,'xzcy']=path
-            print('path',self.table.loc[ID,'xzcy'])
+            # print('path',self.table.loc[ID,'xzcy'])
             self.table.to_csv(self.table_path, index=True, index_label="ID",encoding='utf-8')
 
     def read_all_items(self):
-        self.table = pd.read_csv(self.table_path, index_col='ID',encoding='utf-8')
-        print(self.table)
+        self.table = pd.read_csv(self.table_path, index_col='ID',encoding='utf-8`',dtype=str)
+        # print(self.table)
         return self.table
 
     def find_item(self,ID):
         ID=int(ID)
         self.table = pd.read_csv(self.table_path, index_col='ID',encoding='utf-8')
         try:
-            print('学生',self.table.loc[ID])
+            # print('学生',self.table.loc[ID])
             return self.table.loc[ID]
         except:
-            print('没找到')
+            # print('没找到')
             return -1
 
     def updata_item(self,ID,attribute,data):
@@ -201,16 +238,20 @@ class dbutils:
     @staticmethod
     def batch_import(input_path,db_obj=student()):
         #先检测整个table，确保数据无误再输入，若有误直接弹出报错窗口
-        data = pd.DataFrame(pd.read_excel(input_path))
+        try:
+            data = pd.read_excel(input_path)
+        except:
+            QMessageBox.warning(QApplication.activeWindow(), "错误", "dbutils.batch_import:文件{}读取失败".format(input_path))
+            return False
         if sum(data.duplicated('学号',keep=False)) > 0:
-             
-             dst=data[data.duplicated('学号',keep=False)]
-             print(dst)
-             dst=dst[['学号','学生姓名']]
-             print(dst)
-             dst=dst.to_string()
-             print(dst)
-             QMessageBox.information(QApplication.activeWindow(), "错误", "数据中存在重复学号\n{}".format(dst))
+            dst=data[data.duplicated('学号',keep=False)]
+            # print(dst)
+            dst=dst[['学号','学生姓名']]
+            # print(dst)
+            dst=dst.to_string()
+            # print(dst)
+            QMessageBox.information(QApplication.activeWindow(), "错误", "数据中存在重复学号\n{}".format(dst))
+            return False
         else:
             key_attributes = [
             'ID',
@@ -226,32 +267,32 @@ class dbutils:
             table = pd.read_excel(input_path)
             table1 = table.values
             table1 = table1.tolist()
-            #print(table)
+            # print(table)
             final_msg=""
             final_result=True
             for idx_line,line in enumerate(table1):
-                #print(line)
+                # print(line)
                 
                 for idx,value in enumerate(line):
                     if idx==0:
                         value=str(value)
                     result, msg=db_obj.verify_item(key_attributes[idx],value)
                     if result == False: 
-                        #print("位置：{}行{}列".format(idx_line+1,idx+1),msg)
+                        ## print("位置：{}行{}列".format(idx_line+1,idx+1),msg)
                         final_msg+="位置：{}行{}列".format(idx_line+1,idx+1)+msg+"\n"
                         final_result=False
-            print(final_msg)
+            # print(final_msg)
             if final_result == False:
                 final_msg+="\n请导入格式正确的文件！"
                 QMessageBox.information(QApplication.activeWindow(), "错误", final_msg)
                 return 
             for i in table.index.values.tolist():
                 item = table.loc[i]
-                #print(item)
+                ## print(item)
                 db_obj.add_item(dbutils.transfer_item(item))
             db_obj.import_complete.emit()
             QMessageBox.information(QApplication.activeWindow(), "提示", "导入成功！")
-
+            return True
 
     @staticmethod
     def transfer_item(item):
@@ -266,7 +307,7 @@ class dbutils:
             'teacher':item['指导教师'],
             'zhichen':item['指导教师职称'],
         }
-        #print(t_item)
+        ## print(t_item)
         return t_item
     
     @staticmethod
@@ -285,7 +326,7 @@ class dbutils:
             'zhichen':'指导教师职称'
         }
         # detect id conflict
-        print(db.table.index)
+        # print(db.table.index)
     
         if item['ID'] is not None and item['ID'] != '':
             if db.table.index.isin([int(item['ID'])]).any():
@@ -322,10 +363,11 @@ class dbutils:
     
 if __name__=="__main__":
     #dbutils.batch_import(os.path.join(os.getcwd(),'database','import.xlsx'))
-    print(student.verify_item('com_1_1','-100'))
-    print(student.verify_item('com_1_1','0'))
-    print(student.verify_item('com_1_1','9'))
-    print(student.verify_item('com_1_1','10'))
-    print(student.verify_item('com_1_1','11'))
-    print(student.verify_item('com_1_1','20'))
-    print(student.verify_item('com_1_1','27'))
+    # print(student.verify_item('com_1_1','-100'))
+    # print(student.verify_item('com_1_1','0'))
+    # print(student.verify_item('com_1_1','9'))
+    # print(student.verify_item('com_1_1','10'))
+    # print(student.verify_item('com_1_1','11'))
+    # print(student.verify_item('com_1_1','20'))
+    # print(student.verify_item('com_1_1','27'))
+    pass

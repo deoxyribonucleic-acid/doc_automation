@@ -121,7 +121,7 @@
                    </property>
                    <property name="font">
                     <font>
-                     <family>Segoe UI</family>
+ 
                      <pointsize>14</pointsize>
                      <weight>50</weight>
                      <italic>false</italic>
@@ -175,7 +175,7 @@ color: rgb(255, 255, 255);</string>
                      </property>
                      <property name="font">
                       <font>
-                       <family>Segoe UI</family>
+   
                        <pointsize>10</pointsize>
                        <weight>50</weight>
                        <italic>false</italic>
@@ -228,7 +228,7 @@ color: rgb(255, 255, 255);</string>
                      </property>
                      <property name="font">
                       <font>
-                       <family>Segoe UI</family>
+   
                        <pointsize>10</pointsize>
                        <weight>50</weight>
                        <italic>false</italic>
@@ -284,7 +284,7 @@ color: rgb(255, 255, 255);</string>
                      </property>
                      <property name="font">
                       <font>
-                       <family>Segoe UI</family>
+   
                        <pointsize>10</pointsize>
                        <weight>50</weight>
                        <italic>false</italic>
@@ -337,7 +337,7 @@ color: rgb(255, 255, 255);</string>
                        </property>
                        <property name="font">
                         <font>
-                         <family>Segoe UI</family>
+     
                          <pointsize>10</pointsize>
                          <weight>50</weight>
                          <italic>false</italic>
@@ -391,7 +391,7 @@ color: rgb(255, 255, 255);</string>
                        </property>
                        <property name="font">
                         <font>
-                         <family>Segoe UI</family>
+     
                          <pointsize>10</pointsize>
                          <weight>50</weight>
                          <italic>false</italic>
@@ -439,7 +439,7 @@ color: rgb(255, 255, 255);</string>
                        </property>
                        <property name="font">
                         <font>
-                         <family>Segoe UI</family>
+     
                          <pointsize>10</pointsize>
                          <weight>50</weight>
                          <italic>false</italic>
@@ -493,7 +493,7 @@ color: rgb(255, 255, 255);</string>
                        </property>
                        <property name="font">
                         <font>
-                         <family>Segoe UI</family>
+     
                          <pointsize>10</pointsize>
                          <weight>50</weight>
                          <italic>false</italic>
@@ -541,7 +541,7 @@ color: rgb(255, 255, 255);</string>
                        </property>
                        <property name="font">
                         <font>
-                         <family>Segoe UI</family>
+     
                          <pointsize>10</pointsize>
                          <weight>50</weight>
                          <italic>false</italic>
@@ -592,7 +592,7 @@ color: rgb(255, 255, 255);</string>
                        </property>
                        <property name="font">
                         <font>
-                         <family>Segoe UI</family>
+     
                          <pointsize>10</pointsize>
                          <weight>50</weight>
                          <italic>false</italic>
@@ -692,7 +692,6 @@ color: rgb(255, 255, 255);</string>
                       </property>
                       <property name="font">
                        <font>
-                        <family>Segoe UI</family>
                         <pointsize>14</pointsize>
                         <weight>50</weight>
                         <italic>false</italic>
@@ -735,7 +734,7 @@ color: rgb(255, 255, 255);</string>
                         </property>
                         <property name="font">
                          <font>
-                          <family>Segoe UI</family>
+      
                           <pointsize>10</pointsize>
                           <weight>50</weight>
                           <italic>false</italic>
@@ -767,7 +766,7 @@ color: rgb(255, 255, 255);</string>
                         </property>
                         <property name="font">
                          <font>
-                          <family>Segoe UI</family>
+      
                           <pointsize>10</pointsize>
                           <weight>50</weight>
                           <italic>false</italic>
@@ -792,7 +791,7 @@ color: rgb(255, 255, 255);</string>
                         </property>
                         <property name="font">
                          <font>
-                          <family>Segoe UI</family>
+      
                           <pointsize>10</pointsize>
                           <weight>50</weight>
                           <italic>false</italic>
@@ -824,7 +823,6 @@ color: rgb(255, 255, 255);</string>
                         </property>
                         <property name="font">
                          <font>
-                          <family>Segoe UI</family>
                           <pointsize>10</pointsize>
                           <weight>50</weight>
                           <italic>false</italic>
@@ -853,7 +851,6 @@ color: rgb(255, 255, 255);</string>
                         </property>
                         <property name="font">
                          <font>
-                          <family>Segoe UI</family>
                           <pointsize>10</pointsize>
                           <weight>50</weight>
                           <italic>false</italic>
@@ -882,7 +879,7 @@ color: rgb(255, 255, 255);</string>
                         </property>
                         <property name="font">
                          <font>
-                          <family>Segoe UI</family>
+      
                           <pointsize>10</pointsize>
                           <weight>50</weight>
                           <italic>false</italic>
@@ -907,7 +904,6 @@ color: rgb(255, 255, 255);</string>
                         </property>
                         <property name="font">
                          <font>
-                          <family>Segoe UI</family>
                           <pointsize>10</pointsize>
                           <weight>50</weight>
                           <italic>false</italic>
@@ -936,7 +932,7 @@ color: rgb(255, 255, 255);</string>
                         </property>
                         <property name="font">
                          <font>
-                          <family>Segoe UI</family>
+      
                           <pointsize>10</pointsize>
                           <weight>50</weight>
                           <italic>false</italic>
@@ -965,7 +961,7 @@ color: rgb(255, 255, 255);</string>
                         </property>
                         <property name="font">
                          <font>
-                          <family>Segoe UI</family>
+      
                           <pointsize>10</pointsize>
                           <weight>50</weight>
                           <italic>false</italic>
@@ -997,7 +993,6 @@ color: rgb(255, 255, 255);</string>
                         </property>
                         <property name="font">
                          <font>
-                          <family>Segoe UI</family>
                           <pointsize>10</pointsize>
                           <weight>50</weight>
                           <italic>false</italic>
@@ -1022,7 +1017,7 @@ color: rgb(255, 255, 255);</string>
                         </property>
                         <property name="font">
                          <font>
-                          <family>Segoe UI</family>
+      
                           <pointsize>10</pointsize>
                           <weight>50</weight>
                           <italic>false</italic>
@@ -1057,7 +1052,7 @@ color: rgb(255, 255, 255);</string>
                         </property>
                         <property name="font">
                          <font>
-                          <family>Segoe UI</family>
+      
                           <pointsize>10</pointsize>
                           <weight>50</weight>
                           <italic>false</italic>
@@ -1101,7 +1096,6 @@ color: rgb(255, 255, 255);</string>
                         </property>
                         <property name="font">
                          <font>
-                          <family>Segoe UI</family>
                           <pointsize>10</pointsize>
                           <weight>50</weight>
                           <italic>false</italic>
@@ -1133,7 +1127,6 @@ color: rgb(255, 255, 255);</string>
                         </property>
                         <property name="font">
                          <font>
-                          <family>Segoe UI</family>
                           <pointsize>10</pointsize>
                           <weight>50</weight>
                           <italic>false</italic>
@@ -1162,7 +1155,6 @@ color: rgb(255, 255, 255);</string>
                         </property>
                         <property name="font">
                          <font>
-                          <family>Segoe UI</family>
                           <pointsize>10</pointsize>
                           <weight>50</weight>
                           <italic>false</italic>
@@ -1197,7 +1189,7 @@ color: rgb(255, 255, 255);</string>
                         </property>
                         <property name="font">
                          <font>
-                          <family>Segoe UI</family>
+      
                           <pointsize>10</pointsize>
                           <weight>50</weight>
                           <italic>false</italic>
@@ -1222,7 +1214,6 @@ color: rgb(255, 255, 255);</string>
                         </property>
                         <property name="font">
                          <font>
-                          <family>Segoe UI</family>
                           <pointsize>10</pointsize>
                           <weight>50</weight>
                           <italic>false</italic>
@@ -1257,7 +1248,6 @@ color: rgb(255, 255, 255);</string>
                         </property>
                         <property name="font">
                          <font>
-                          <family>Segoe UI</family>
                           <pointsize>10</pointsize>
                           <weight>50</weight>
                           <italic>false</italic>
@@ -1308,7 +1298,7 @@ color: rgb(255, 255, 255);</string>
                         </property>
                         <property name="font">
                          <font>
-                          <family>Segoe UI</family>
+      
                           <pointsize>10</pointsize>
                           <weight>50</weight>
                           <italic>false</italic>
@@ -1340,7 +1330,6 @@ color: rgb(255, 255, 255);</string>
                         </property>
                         <property name="font">
                          <font>
-                          <family>Segoe UI</family>
                           <pointsize>10</pointsize>
                           <weight>50</weight>
                           <italic>false</italic>
@@ -1368,7 +1357,6 @@ color: rgb(255, 255, 255);</string>
                         </property>
                         <property name="font">
                          <font>
-                          <family>Segoe UI</family>
                           <pointsize>10</pointsize>
                           <weight>50</weight>
                           <italic>false</italic>
@@ -1398,7 +1386,6 @@ color: rgb(255, 255, 255);</string>
                       </property>
                       <property name="font">
                        <font>
-                        <family>Segoe UI</family>
                         <pointsize>10</pointsize>
                         <weight>50</weight>
                         <italic>false</italic>
@@ -1428,7 +1415,6 @@ color: rgb(255, 255, 255);</string>
                   </property>
                   <property name="font">
                    <font>
-                    <family>Segoe UI</family>
                     <pointsize>14</pointsize>
                     <weight>50</weight>
                     <italic>false</italic>
@@ -1457,7 +1443,6 @@ color: rgb(255, 255, 255);</string>
                  <widget class="QLabel" name="path_label">
                   <property name="font">
                    <font>
-                    <family>Segoe UI</family>
                     <pointsize>10</pointsize>
                     <weight>50</weight>
                     <italic>false</italic>
@@ -1476,7 +1461,6 @@ color: rgb(255, 255, 255);</string>
                    <widget class="QListWidget" name="sig_file_list">
                     <property name="font">
                      <font>
-                      <family>Segoe UI</family>
                       <pointsize>10</pointsize>
                       <weight>50</weight>
                       <italic>false</italic>
@@ -1501,7 +1485,6 @@ color: rgb(255, 255, 255);</string>
                     </property>
                     <property name="font">
                      <font>
-                      <family>Segoe UI</family>
                       <pointsize>10</pointsize>
                       <weight>50</weight>
                       <italic>false</italic>
@@ -1531,7 +1514,6 @@ color: rgb(255, 255, 255);</string>
                   </property>
                   <property name="font">
                    <font>
-                    <family>Segoe UI</family>
                     <pointsize>10</pointsize>
                     <weight>50</weight>
                     <italic>false</italic>
@@ -1557,7 +1539,6 @@ color: rgb(255, 255, 255);</string>
                   </property>
                   <property name="font">
                    <font>
-                    <family>Segoe UI</family>
                     <pointsize>14</pointsize>
                     <weight>50</weight>
                     <italic>false</italic>
@@ -1643,7 +1624,6 @@ color: rgb(255, 255, 255);</string>
                      <widget class="QTabWidget" name="tabWidget">
                       <property name="font">
                        <font>
-                        <family>Segoe UI</family>
                         <pointsize>10</pointsize>
                         <weight>50</weight>
                         <italic>false</italic>
@@ -1699,7 +1679,6 @@ color: rgb(255, 255, 255);</string>
                          <widget class="QLabel" name="label">
                           <property name="font">
                            <font>
-                            <family>Segoe UI</family>
                             <pointsize>10</pointsize>
                             <weight>50</weight>
                             <italic>false</italic>
@@ -1724,7 +1703,6 @@ color: rgb(255, 255, 255);</string>
                           </property>
                           <property name="font">
                            <font>
-                            <family>Segoe UI</family>
                             <pointsize>10</pointsize>
                             <weight>50</weight>
                             <italic>false</italic>
@@ -1740,7 +1718,6 @@ color: rgb(255, 255, 255);</string>
                          <widget class="QLabel" name="label_6">
                           <property name="font">
                            <font>
-                            <family>Segoe UI</family>
                             <pointsize>10</pointsize>
                             <weight>50</weight>
                             <italic>false</italic>
@@ -1765,7 +1742,6 @@ color: rgb(255, 255, 255);</string>
                           </property>
                           <property name="font">
                            <font>
-                            <family>Segoe UI</family>
                             <pointsize>10</pointsize>
                             <weight>50</weight>
                             <italic>false</italic>
@@ -1781,7 +1757,6 @@ color: rgb(255, 255, 255);</string>
                          <widget class="QLabel" name="label_2">
                           <property name="font">
                            <font>
-                            <family>Segoe UI</family>
                             <pointsize>10</pointsize>
                             <weight>50</weight>
                             <italic>false</italic>
@@ -1806,7 +1781,6 @@ color: rgb(255, 255, 255);</string>
                           </property>
                           <property name="font">
                            <font>
-                            <family>Segoe UI</family>
                             <pointsize>10</pointsize>
                             <weight>50</weight>
                             <italic>false</italic>
@@ -1822,7 +1796,6 @@ color: rgb(255, 255, 255);</string>
                          <widget class="QLabel" name="label_7">
                           <property name="font">
                            <font>
-                            <family>Segoe UI</family>
                             <pointsize>10</pointsize>
                             <weight>50</weight>
                             <italic>false</italic>
@@ -1850,7 +1823,6 @@ color: rgb(255, 255, 255);</string>
                           </property>
                           <property name="font">
                            <font>
-                            <family>Segoe UI</family>
                             <pointsize>10</pointsize>
                             <weight>50</weight>
                             <italic>false</italic>
@@ -1866,7 +1838,6 @@ color: rgb(255, 255, 255);</string>
                          <widget class="QLabel" name="label_3">
                           <property name="font">
                            <font>
-                            <family>Segoe UI</family>
                             <pointsize>10</pointsize>
                             <weight>50</weight>
                             <italic>false</italic>
@@ -1891,7 +1862,6 @@ color: rgb(255, 255, 255);</string>
                           </property>
                           <property name="font">
                            <font>
-                            <family>Segoe UI</family>
                             <pointsize>10</pointsize>
                             <weight>50</weight>
                             <italic>false</italic>
@@ -1907,7 +1877,6 @@ color: rgb(255, 255, 255);</string>
                          <widget class="QLabel" name="label_8">
                           <property name="font">
                            <font>
-                            <family>Segoe UI</family>
                             <pointsize>10</pointsize>
                             <weight>50</weight>
                             <italic>false</italic>
@@ -1932,7 +1901,6 @@ color: rgb(255, 255, 255);</string>
                           </property>
                           <property name="font">
                            <font>
-                            <family>Segoe UI</family>
                             <pointsize>10</pointsize>
                             <weight>50</weight>
                             <italic>false</italic>
@@ -1948,7 +1916,7 @@ color: rgb(255, 255, 255);</string>
                          <widget class="QLabel" name="label_4">
                           <property name="font">
                            <font>
-                            <family>Segoe UI</family>
+        
                             <pointsize>10</pointsize>
                             <weight>50</weight>
                             <italic>false</italic>
@@ -1976,7 +1944,6 @@ color: rgb(255, 255, 255);</string>
                           </property>
                           <property name="font">
                            <font>
-                            <family>Segoe UI</family>
                             <pointsize>10</pointsize>
                             <weight>50</weight>
                             <italic>false</italic>
@@ -1992,7 +1959,6 @@ color: rgb(255, 255, 255);</string>
                          <widget class="QLabel" name="label_9">
                           <property name="font">
                            <font>
-                            <family>Segoe UI</family>
                             <pointsize>10</pointsize>
                             <weight>50</weight>
                             <italic>false</italic>
@@ -2020,7 +1986,6 @@ color: rgb(255, 255, 255);</string>
                           </property>
                           <property name="font">
                            <font>
-                            <family>Segoe UI</family>
                             <pointsize>10</pointsize>
                             <weight>50</weight>
                             <italic>false</italic>
@@ -2036,7 +2001,6 @@ color: rgb(255, 255, 255);</string>
                          <widget class="QLabel" name="label_5">
                           <property name="font">
                            <font>
-                            <family>Segoe UI</family>
                             <pointsize>10</pointsize>
                             <weight>50</weight>
                             <italic>false</italic>
@@ -2064,7 +2028,7 @@ color: rgb(255, 255, 255);</string>
                           </property>
                           <property name="font">
                            <font>
-                            <family>Segoe UI</family>
+        
                             <pointsize>10</pointsize>
                             <weight>50</weight>
                             <italic>false</italic>
@@ -2104,7 +2068,6 @@ color: rgb(255, 255, 255);</string>
                          <widget class="QLabel" name="label_12">
                           <property name="font">
                            <font>
-                            <family>Segoe UI</family>
                             <pointsize>10</pointsize>
                             <weight>50</weight>
                             <italic>false</italic>
@@ -2132,7 +2095,7 @@ color: rgb(255, 255, 255);</string>
                           </property>
                           <property name="font">
                            <font>
-                            <family>Segoe UI</family>
+        
                             <pointsize>10</pointsize>
                             <weight>50</weight>
                             <italic>false</italic>
@@ -2148,7 +2111,7 @@ color: rgb(255, 255, 255);</string>
                          <widget class="QLabel" name="label_15">
                           <property name="font">
                            <font>
-                            <family>Segoe UI</family>
+        
                             <pointsize>10</pointsize>
                             <weight>50</weight>
                             <italic>false</italic>
@@ -2176,7 +2139,7 @@ color: rgb(255, 255, 255);</string>
                           </property>
                           <property name="font">
                            <font>
-                            <family>Segoe UI</family>
+        
                             <pointsize>10</pointsize>
                             <weight>50</weight>
                             <italic>false</italic>
@@ -2192,7 +2155,7 @@ color: rgb(255, 255, 255);</string>
                          <widget class="QLabel" name="label_18">
                           <property name="font">
                            <font>
-                            <family>Segoe UI</family>
+        
                             <pointsize>10</pointsize>
                             <weight>50</weight>
                             <italic>false</italic>
@@ -2220,7 +2183,7 @@ color: rgb(255, 255, 255);</string>
                           </property>
                           <property name="font">
                            <font>
-                            <family>Segoe UI</family>
+        
                             <pointsize>10</pointsize>
                             <weight>50</weight>
                             <italic>false</italic>
@@ -2236,7 +2199,7 @@ color: rgb(255, 255, 255);</string>
                          <widget class="QLabel" name="label_10">
                           <property name="font">
                            <font>
-                            <family>Segoe UI</family>
+        
                             <pointsize>10</pointsize>
                             <weight>50</weight>
                             <italic>false</italic>
@@ -2264,7 +2227,7 @@ color: rgb(255, 255, 255);</string>
                           </property>
                           <property name="font">
                            <font>
-                            <family>Segoe UI</family>
+        
                             <pointsize>10</pointsize>
                             <weight>50</weight>
                             <italic>false</italic>
@@ -2280,7 +2243,7 @@ color: rgb(255, 255, 255);</string>
                          <widget class="QLabel" name="label_11">
                           <property name="font">
                            <font>
-                            <family>Segoe UI</family>
+        
                             <pointsize>10</pointsize>
                             <weight>50</weight>
                             <italic>false</italic>
@@ -2305,7 +2268,7 @@ color: rgb(255, 255, 255);</string>
                           </property>
                           <property name="font">
                            <font>
-                            <family>Segoe UI</family>
+        
                             <pointsize>10</pointsize>
                             <weight>50</weight>
                             <italic>false</italic>
@@ -2321,7 +2284,7 @@ color: rgb(255, 255, 255);</string>
                          <widget class="QLabel" name="label_13">
                           <property name="font">
                            <font>
-                            <family>Segoe UI</family>
+        
                             <pointsize>10</pointsize>
                             <weight>50</weight>
                             <italic>false</italic>
@@ -2349,7 +2312,7 @@ color: rgb(255, 255, 255);</string>
                           </property>
                           <property name="font">
                            <font>
-                            <family>Segoe UI</family>
+        
                             <pointsize>10</pointsize>
                             <weight>50</weight>
                             <italic>false</italic>
@@ -2365,7 +2328,7 @@ color: rgb(255, 255, 255);</string>
                          <widget class="QLabel" name="label_16">
                           <property name="font">
                            <font>
-                            <family>Segoe UI</family>
+        
                             <pointsize>10</pointsize>
                             <weight>50</weight>
                             <italic>false</italic>
@@ -2393,7 +2356,7 @@ color: rgb(255, 255, 255);</string>
                           </property>
                           <property name="font">
                            <font>
-                            <family>Segoe UI</family>
+        
                             <pointsize>10</pointsize>
                             <weight>50</weight>
                             <italic>false</italic>
@@ -2409,7 +2372,7 @@ color: rgb(255, 255, 255);</string>
                          <widget class="QLabel" name="label_17">
                           <property name="font">
                            <font>
-                            <family>Segoe UI</family>
+        
                             <pointsize>10</pointsize>
                             <weight>50</weight>
                             <italic>false</italic>
@@ -2437,7 +2400,7 @@ color: rgb(255, 255, 255);</string>
                           </property>
                           <property name="font">
                            <font>
-                            <family>Segoe UI</family>
+        
                             <pointsize>10</pointsize>
                             <weight>50</weight>
                             <italic>false</italic>
@@ -2477,7 +2440,7 @@ color: rgb(255, 255, 255);</string>
                          <widget class="QLabel" name="label_24">
                           <property name="font">
                            <font>
-                            <family>Segoe UI</family>
+        
                             <pointsize>10</pointsize>
                             <weight>50</weight>
                             <italic>false</italic>
@@ -2505,7 +2468,7 @@ color: rgb(255, 255, 255);</string>
                           </property>
                           <property name="font">
                            <font>
-                            <family>Segoe UI</family>
+        
                             <pointsize>10</pointsize>
                             <weight>50</weight>
                             <italic>false</italic>
@@ -2521,7 +2484,7 @@ color: rgb(255, 255, 255);</string>
                          <widget class="QLabel" name="label_22">
                           <property name="font">
                            <font>
-                            <family>Segoe UI</family>
+        
                             <pointsize>10</pointsize>
                             <weight>50</weight>
                             <italic>false</italic>
@@ -2549,7 +2512,7 @@ color: rgb(255, 255, 255);</string>
                           </property>
                           <property name="font">
                            <font>
-                            <family>Segoe UI</family>
+        
                             <pointsize>10</pointsize>
                             <weight>50</weight>
                             <italic>false</italic>
@@ -2565,7 +2528,7 @@ color: rgb(255, 255, 255);</string>
                          <widget class="QLabel" name="label_23">
                           <property name="font">
                            <font>
-                            <family>Segoe UI</family>
+        
                             <pointsize>10</pointsize>
                             <weight>50</weight>
                             <italic>false</italic>
@@ -2593,7 +2556,7 @@ color: rgb(255, 255, 255);</string>
                           </property>
                           <property name="font">
                            <font>
-                            <family>Segoe UI</family>
+        
                             <pointsize>10</pointsize>
                             <weight>50</weight>
                             <italic>false</italic>
@@ -2609,7 +2572,7 @@ color: rgb(255, 255, 255);</string>
                          <widget class="QLabel" name="label_14">
                           <property name="font">
                            <font>
-                            <family>Segoe UI</family>
+        
                             <pointsize>10</pointsize>
                             <weight>50</weight>
                             <italic>false</italic>
@@ -2637,7 +2600,7 @@ color: rgb(255, 255, 255);</string>
                           </property>
                           <property name="font">
                            <font>
-                            <family>Segoe UI</family>
+        
                             <pointsize>10</pointsize>
                             <weight>50</weight>
                             <italic>false</italic>
@@ -2653,7 +2616,7 @@ color: rgb(255, 255, 255);</string>
                          <widget class="QLabel" name="label_19">
                           <property name="font">
                            <font>
-                            <family>Segoe UI</family>
+        
                             <pointsize>10</pointsize>
                             <weight>50</weight>
                             <italic>false</italic>
@@ -2681,7 +2644,7 @@ color: rgb(255, 255, 255);</string>
                           </property>
                           <property name="font">
                            <font>
-                            <family>Segoe UI</family>
+        
                             <pointsize>10</pointsize>
                             <weight>50</weight>
                             <italic>false</italic>
@@ -2697,7 +2660,7 @@ color: rgb(255, 255, 255);</string>
                          <widget class="QLabel" name="label_21">
                           <property name="font">
                            <font>
-                            <family>Segoe UI</family>
+        
                             <pointsize>10</pointsize>
                             <weight>50</weight>
                             <italic>false</italic>
@@ -2725,7 +2688,7 @@ color: rgb(255, 255, 255);</string>
                           </property>
                           <property name="font">
                            <font>
-                            <family>Segoe UI</family>
+        
                             <pointsize>10</pointsize>
                             <weight>50</weight>
                             <italic>false</italic>
@@ -2741,7 +2704,7 @@ color: rgb(255, 255, 255);</string>
                          <widget class="QLabel" name="label_25">
                           <property name="font">
                            <font>
-                            <family>Segoe UI</family>
+        
                             <pointsize>10</pointsize>
                             <weight>50</weight>
                             <italic>false</italic>
@@ -2769,7 +2732,7 @@ color: rgb(255, 255, 255);</string>
                           </property>
                           <property name="font">
                            <font>
-                            <family>Segoe UI</family>
+        
                             <pointsize>10</pointsize>
                             <weight>50</weight>
                             <italic>false</italic>
@@ -2785,7 +2748,7 @@ color: rgb(255, 255, 255);</string>
                          <widget class="QLabel" name="label_26">
                           <property name="font">
                            <font>
-                            <family>Segoe UI</family>
+        
                             <pointsize>10</pointsize>
                             <weight>50</weight>
                             <italic>false</italic>
@@ -2813,7 +2776,7 @@ color: rgb(255, 255, 255);</string>
                           </property>
                           <property name="font">
                            <font>
-                            <family>Segoe UI</family>
+        
                             <pointsize>10</pointsize>
                             <weight>50</weight>
                             <italic>false</italic>
@@ -2829,7 +2792,7 @@ color: rgb(255, 255, 255);</string>
                          <widget class="QLabel" name="label_20">
                           <property name="font">
                            <font>
-                            <family>Segoe UI</family>
+        
                             <pointsize>10</pointsize>
                             <weight>50</weight>
                             <italic>false</italic>
@@ -2857,7 +2820,7 @@ color: rgb(255, 255, 255);</string>
                           </property>
                           <property name="font">
                            <font>
-                            <family>Segoe UI</family>
+        
                             <pointsize>10</pointsize>
                             <weight>50</weight>
                             <italic>false</italic>
@@ -2873,7 +2836,7 @@ color: rgb(255, 255, 255);</string>
                          <widget class="QLabel" name="label_27">
                           <property name="font">
                            <font>
-                            <family>Segoe UI</family>
+        
                             <pointsize>10</pointsize>
                             <weight>50</weight>
                             <italic>false</italic>
@@ -2901,7 +2864,7 @@ color: rgb(255, 255, 255);</string>
                           </property>
                           <property name="font">
                            <font>
-                            <family>Segoe UI</family>
+        
                             <pointsize>10</pointsize>
                             <weight>50</weight>
                             <italic>false</italic>
@@ -2933,7 +2896,7 @@ color: rgb(255, 255, 255);</string>
                     </property>
                     <property name="font">
                      <font>
-                      <family>Segoe UI</family>
+  
                       <pointsize>10</pointsize>
                       <weight>50</weight>
                       <italic>false</italic>
@@ -2965,7 +2928,7 @@ color: rgb(255, 255, 255);</string>
                     </property>
                     <property name="font">
                      <font>
-                      <family>Segoe UI</family>
+  
                       <pointsize>10</pointsize>
                       <weight>50</weight>
                       <italic>false</italic>
@@ -3014,7 +2977,7 @@ color: rgb(255, 255, 255);</string>
                   </property>
                   <property name="font">
                    <font>
-                    <family>Segoe UI</family>
+
                     <pointsize>10</pointsize>
                     <weight>50</weight>
                     <italic>false</italic>
@@ -3040,7 +3003,7 @@ color: rgb(255, 255, 255);</string>
                   </property>
                   <property name="font">
                    <font>
-                    <family>Segoe UI</family>
+
                     <pointsize>14</pointsize>
                     <weight>50</weight>
                     <italic>false</italic>
@@ -3069,7 +3032,7 @@ color: rgb(255, 255, 255);</string>
                  <widget class="QLabel" name="output_label_4">
                   <property name="font">
                    <font>
-                    <family>Segoe UI</family>
+
                     <pointsize>10</pointsize>
                     <weight>50</weight>
                     <italic>false</italic>
@@ -3091,7 +3054,7 @@ color: rgb(255, 255, 255);</string>
                    <widget class="QListWidget" name="merge_file_list">
                     <property name="font">
                      <font>
-                      <family>Segoe UI</family>
+  
                       <pointsize>10</pointsize>
                       <weight>50</weight>
                       <italic>false</italic>
@@ -3116,7 +3079,7 @@ color: rgb(255, 255, 255);</string>
                     </property>
                     <property name="font">
                      <font>
-                      <family>Segoe UI</family>
+  
                       <pointsize>10</pointsize>
                       <weight>50</weight>
                       <italic>false</italic>
@@ -3134,7 +3097,7 @@ color: rgb(255, 255, 255);</string>
                  <widget class="QLabel" name="output_label_2">
                   <property name="font">
                    <font>
-                    <family>Segoe UI</family>
+
                     <pointsize>10</pointsize>
                     <weight>50</weight>
                     <italic>false</italic>
@@ -3168,7 +3131,7 @@ color: rgb(255, 255, 255);</string>
                     </property>
                     <property name="font">
                      <font>
-                      <family>Segoe UI</family>
+  
                       <weight>50</weight>
                       <italic>false</italic>
                       <bold>false</bold>
@@ -3204,7 +3167,7 @@ color: rgb(255, 255, 255);</string>
                     </property>
                     <property name="font">
                      <font>
-                      <family>Segoe UI</family>
+  
                       <weight>50</weight>
                       <italic>false</italic>
                       <bold>false</bold>
@@ -3233,7 +3196,7 @@ color: rgb(255, 255, 255);</string>
                   </property>
                   <property name="font">
                    <font>
-                    <family>Segoe UI</family>
+
                     <pointsize>10</pointsize>
                     <weight>50</weight>
                     <italic>false</italic>
@@ -3259,7 +3222,7 @@ color: rgb(255, 255, 255);</string>
                   </property>
                   <property name="font">
                    <font>
-                    <family>Segoe UI</family>
+
                     <pointsize>14</pointsize>
                     <weight>50</weight>
                     <italic>false</italic>
@@ -3288,7 +3251,7 @@ color: rgb(255, 255, 255);</string>
                  <widget class="QLabel" name="path_label_2">
                   <property name="font">
                    <font>
-                    <family>Segoe UI</family>
+
                     <pointsize>10</pointsize>
                     <weight>50</weight>
                     <italic>false</italic>
@@ -3337,7 +3300,7 @@ color: rgb(255, 255, 255);</string>
                   </property>
                   <property name="font">
                    <font>
-                    <family>Segoe UI</family>
+
                     <pointsize>10</pointsize>
                     <weight>50</weight>
                     <italic>false</italic>

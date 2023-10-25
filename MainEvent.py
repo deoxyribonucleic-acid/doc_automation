@@ -11,6 +11,7 @@ from tools.signature import signature_fill
 from tools.doc2docx import doc_to_docx
 from tools.db_operate import dbutils
 import pandas as pd
+from tools.FileManager import getPath
 class Event:
     zdls=[]
     xzzz=[]
@@ -25,13 +26,12 @@ class Event:
 
 #模板生成
     def read_all_student(self):
-        # print('执行查看')
+        # pr'执行查看')
         return self.student_operate.read_all_items()
 
     def choice_stu(self,stu_name):
-        print('选择学生',stu_name)
+        # print('选择学生',stu_name)
         find_id=re.findall("\d+", stu_name)[0]
-        find_id=int(find_id)
         stu=self.student_operate.find_item(find_id)
         self.parent.name_input.setText(str(stu.stu_name))
         self.parent.id_input.setText(str(stu.name))
@@ -42,6 +42,34 @@ class Event:
         self.parent.title_input.setText(str(stu.title))
         self.parent.teacher_input.setText(str(stu.teacher))
         self.parent.zhichen_input.setText(str(stu.zhichen))
+
+        self.parent.com_1_1.setText(str(stu.com_1_1))
+        self.parent.com_1_2.setText(str(stu.com_1_2))
+        self.parent.com_1_3.setText(str(stu.com_1_3))
+        self.parent.com_1_4.setText(str(stu.com_1_4))
+        self.parent.com_1_5.setText(str(stu.com_1_5))
+        self.parent.com_1_6.setText(str(stu.com_1_6))
+        self.parent.com_1_7.setText(str(stu.com_1_7))
+        self.parent.com_1_8.setText(str(stu.com_1_8))
+        self.parent.com_1_9.setText(str(stu.com_1_9))
+        self.parent.com_2_1.setText(str(stu.com_2_1))
+        self.parent.com_2_2.setText(str(stu.com_2_2))
+        self.parent.com_2_3.setText(str(stu.com_2_3))
+        self.parent.com_2_4.setText(str(stu.com_2_4))
+        self.parent.com_2_5.setText(str(stu.com_2_5))
+        self.parent.com_2_6.setText(str(stu.com_2_6))
+        self.parent.com_2_7.setText(str(stu.com_2_7))
+        self.parent.com_2_8.setText(str(stu.com_2_8))
+        self.parent.com_3_1.setText(str(stu.com_3_1))
+        self.parent.com_3_2.setText(str(stu.com_3_2))
+        self.parent.com_3_3.setText(str(stu.com_3_3))
+        self.parent.com_3_4.setText(str(stu.com_3_4))
+        self.parent.com_3_5.setText(str(stu.com_3_5))
+        self.parent.com_3_6.setText(str(stu.com_3_6))
+        self.parent.com_3_7.setText(str(stu.com_3_7))
+        self.parent.com_3_8.setText(str(stu.com_3_8))
+        self.parent.com_3_9.setText(str(stu.com_3_9))
+        self.parent.com_3_10.setText(str(stu.com_3_10))
 
         if type(stu.zdls)==str:
             self.zdls=stu.zdls.split(',')
@@ -68,10 +96,10 @@ class Event:
 
 
     def choiceOut(self):
-        path=QFileDialog.getExistingDirectory(self.parent,'打开','./')
+        path=QFileDialog.getExistingDirectory(self.parent,'打开',os.getcwd())
         if path:
             self.parent.output_input.setText(path)
-            # print(path)
+            # prpath)
 
 
     def run(self):
@@ -88,37 +116,37 @@ class Event:
         }
         save_path=self.parent.output_input.text()+'/'
         try:
-            print('保存路径',save_path)
+            # print('保存路径',save_path)
             if not save_path == '/':
                 Template(save_path,stu_data)
                 QMessageBox.about(self.parent, "success", "生成成功!")
             else:
                 QMessageBox.about(self.parent, "error", "请先选择生成目录")
         except:
-            QMessageBox.about(self.parent, "error", "检测到文件正被占用，请结束word、wps进程后重试")
+            QMessageBox.about(self.parent, "error", "检测到文件{}正被占用，请结束word、wps进程后重试".format(save_path))
 
 
     # 填充签名
     def choice_zdls_file(self):
-        print('执行了选择指导老师')
-        total_path = QFileDialog.getOpenFileNames(self.parent, '选择图片文件', './', '图片文件(*.jpg *png)"')[0]
+        # print('执行了选择指导老师')
+        total_path = QFileDialog.getOpenFileNames(self.parent, '选择图片文件', os.getcwd(), '图片文件(*.jpg *png)"')[0]
         self.zdls = total_path
-        sig_dir=os.getcwd()+'/signature/'+self.parent.name_input.text()
+        sig_dir=os.getcwd()()+'/signature/'+self.parent.name_input.text()
         if not os.path.exists(sig_dir):
             os.mkdir(sig_dir)
         sig_path=''
         index=1
         for img in self.zdls:
             save_path=sig_dir+'/'+self.parent.name_input.text()+'-指导老师'+str(index)+'.png'
-            print(save_path)
+            # print(save_path)
             sig_path =sig_path+','+save_path
             index=index+1
             shutil.copyfile(img,save_path)
         sig_path=sig_path[1:]
-        self.student_operate.add_sig_infrom(int(self.parent.id_input.text()),'zdls',sig_path)
+        self.student_operate.add_sig_infrom(self.parent.id_input.text(),'zdls',sig_path)
 
 
-        print(self.zdls)
+        # print(self.zdls)
         count = len(total_path)
         text = self.parent.zdls_sig.text()
         if total_path:
@@ -126,9 +154,9 @@ class Event:
             self.parent.zdls_sig.setText(new_text)
 
     def choice_xzzz_file(self):
-        total_path = QFileDialog.getOpenFileNames(self.parent, '选择图片文件', './', '图片文件(*.jpg *png)"')[0]
+        total_path = QFileDialog.getOpenFileNames(self.parent, '选择图片文件', os.getcwd(), '图片文件(*.jpg *png)"')[0]
         self.xzzz = total_path
-        sig_dir = os.getcwd() + '/signature/' + self.parent.name_input.text()
+        sig_dir = os.getcwd()() + '/signature/' + self.parent.name_input.text()
         if not os.path.exists(sig_dir):
             os.mkdir(sig_dir)
         sig_path = ''
@@ -139,9 +167,9 @@ class Event:
             index = index + 1
             shutil.copyfile(img,save_path)
         sig_path = sig_path[1:]
-        self.student_operate.add_sig_infrom(int(self.parent.id_input.text()), 'xzzz', sig_path)
+        self.student_operate.add_sig_infrom(self.parent.id_input.text(), 'xzzz', sig_path)
 
-        print(self.xzzz)
+        # print(self.xzzz)
         count = len(total_path)
         text = self.parent.xzzz_sig.text()
         if total_path:
@@ -149,9 +177,9 @@ class Event:
             self.parent.xzzz_sig.setText(new_text)
 
     def choice_xzcy_file(self):
-        total_path = QFileDialog.getOpenFileNames(self.parent, '选择图片文件', './', '图片文件(*.jpg *png)"')[0]
+        total_path = QFileDialog.getOpenFileNames(self.parent, '选择图片文件', os.getcwd(), '图片文件(*.jpg *png)"')[0]
         self.xzcy = total_path
-        sig_dir = os.getcwd() + '/signature/' + self.parent.name_input.text()
+        sig_dir = os.getcwd()() + '/signature/' + self.parent.name_input.text()
         if not os.path.exists(sig_dir):
             os.mkdir(sig_dir)
         sig_path = ''
@@ -162,9 +190,9 @@ class Event:
             index = index + 1
             shutil.copyfile(img, save_path)
         sig_path = sig_path[1:]
-        self.student_operate.add_sig_infrom(int(self.parent.id_input.text()), 'xzcy', sig_path)
+        self.student_operate.add_sig_infrom(self.parent.id_input.text(), 'xzcy', sig_path)
 
-        print(self.xzcy)
+        # print(self.xzcy)
         count = len(total_path)
         text = self.parent.xzcy_sig.text()
         if total_path:
@@ -172,7 +200,7 @@ class Event:
             self.parent.xzcy_sig.setText(new_text)
 
     def choice_Sig_file(self):
-        total_path = QFileDialog.getOpenFileNames(self.parent, '选择word文件', './', 'Word文件(*docx *doc)"')
+        total_path = QFileDialog.getOpenFileNames(self.parent, '选择word文件', os.getcwd(), 'Word文件(*docx *doc)"')
         self.parent.sig_file_list.clear()
         for path in total_path[0]:
             self.parent.sig_file_list.addItem(path)
@@ -196,7 +224,7 @@ class Event:
 
     #快速评审
     def choice_ass_out_path(self):
-        path=QFileDialog.getExistingDirectory(self.parent, '打开', './')
+        path=QFileDialog.getExistingDirectory(self.parent, '打开', os.getcwd())
         if path:
             self.parent.ass_out_path.setText(path)
 
@@ -247,22 +275,22 @@ class Event:
                 "three": self.parent.com_3_3.text(),
                 "four": self.parent.com_3_4.text(),
                 "five": self.parent.com_3_5.text(),
-                "six": self.parent.com_3_6.text(),
-                "seven": self.parent.com_3_7.text(),
-                "eight": self.parent.com_3_8.text(),
-                "nine":self.parent.com_3_9.text(),
-                "ten":self.parent.com_3_10.text(),
+                # "six": self.parent.com_3_6.text(),
+                # "seven": self.parent.com_3_7.text(),
+                # "eight": self.parent.com_3_8.text(),
+                # "nine":self.parent.com_3_9.text(),
+                # "ten":self.parent.com_3_10.text(),
             }
 
         total = 0
         try:
             for item in ass.values():
-                total = total + int(item)
+                total = int(total) + int(item)
             ass.update({'total': total})
             stu_data.update(ass)
-            print(stu_data)
+            # print(stu_data)
             #TODO 校验一下成绩再生成
-            print('导出？', self.parent.ass_out_path.text())
+            # print('MainEvent.py 尝试导出', self.parent.ass_out_path.text())
             if not self.parent.ass_out_path.text()=='':
                 try:
                     res_path = assess(index, self.parent.ass_out_path.text(), stu_data)
@@ -278,18 +306,18 @@ class Event:
 
     #合并文件
     def choice_total_file(self):
-        merge_total_path = QFileDialog.getOpenFileNames(self.parent, '选择word文件', './','Word文件(*pdf *docx *doc)"')
+        merge_total_path = QFileDialog.getOpenFileNames(self.parent, '选择word文件', os.getcwd(),'Word文件(*pdf *docx *doc)"')
         self.merge_total_path = merge_total_path[0]
         self.parent.merge_file_list.clear()
         for path in merge_total_path[0]:
-            # print(path)
+            # prpath)
             self.parent.merge_file_list.addItem(path)
 
         string='选择dox/docx/pdf文件:'+'已选择'+str(len(self.merge_total_path))+'--应有'+'13'
         self.parent.output_label_4.setText(string)
 
     def choice_merge_res_path(self):
-        res_path=QFileDialog.getExistingDirectory(self.parent, '打开', './')
+        res_path=QFileDialog.getExistingDirectory(self.parent, '打开', os.getcwd())
         if res_path:
             self.parent.output_input_4.setText(res_path)
 
@@ -314,11 +342,11 @@ class Event:
             QMessageBox.about(self.parent, "error", "请先选择生成目录")
 
     def del_temp(self):
-        dir_path=os.getcwd()+'/temp_pdf'
+        dir_path=os.sys.argv[0]+'/temp_pdf'
         for root, dirs, files in os.walk(dir_path, topdown=False):
-            print(root)  # 各级文件夹绝对路径
-            print(dirs)  # root下一级文件夹名称列表，如 ['文件夹1','文件夹2']
-            print(files)  # root下文件名列表，如 ['文件1','文件2']
+            # print(root)  # 各级文件夹绝对路径
+            # print(dirs)  # root下一级文件夹名称列表，如 ['文件夹1','文件夹2']
+            # print(files)  # root下文件名列表，如 ['文件1','文件2']
             # 第一步：删除文件
             for name in files:
                 os.remove(os.path.join(root, name))  # 删除文件
@@ -328,13 +356,14 @@ class Event:
 
     def update_db(self,id,attribute,data):
         if self.student_operate.updata_item(id,attribute,data):
-            print('{}更新{}为{}'.format(id,attribute,data))
+            # print('{}更新{}为{}'.format(id,attribute,data))
+            pass
         else:
-            print('校验不通过，更新失败')
+            # print('校验不通过，更新失败')
+            pass
               
     def setup_combobox(self):
-        self.major_db=pd.read_excel('database/majors.xlsx')
-
+        self.major_db=pd.read_excel(getPath("database/majors.xlsx"))
         school_list=self.major_db.columns.values.tolist()
         for school in school_list:
             self.parent.school_select.addItem(school)
@@ -377,7 +406,7 @@ class Event:
         self.parent.doc_to_docx.setVisible(False)
 
     def student_mode(self):
-        print('学生模式')
+        # print('学生模式')
         self.parent.pushButton_2.setEnabled(False)
         self.parent.pushButton_3.setEnabled(False)
         self.parent.signature_fill.setVisible(False)
@@ -385,7 +414,7 @@ class Event:
         self.parent.doc_to_docx.setVisible(False)
 
     def teacher_mode(self):
-        print('teacher')
+        # print('teacher')
         self.parent.pushButton_2.setEnabled(True)
         self.parent.pushButton_3.setEnabled(True)
         self.parent.signature_fill.setVisible(True)

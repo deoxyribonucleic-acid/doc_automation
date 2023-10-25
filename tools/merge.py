@@ -13,7 +13,7 @@ if sys.platform == 'win32':
 
 from tools.doc2docx import doc_to_docx
 
-def del_file(path=os.getcwd()+'/temp_pdf'):
+def del_file(path=os.sys.argv[0]+'/temp_pdf'):
     ls = os.listdir(path)
     for i in ls:
         c_path = os.path.join(path, i)
@@ -21,7 +21,7 @@ def del_file(path=os.getcwd()+'/temp_pdf'):
             del_file(c_path)
         else:  # 如果是一个文件那么直接删除
             os.remove(c_path)
-    print('文件已经清空完成')
+    # print('文件已经清空完成')
 
 def Word_to_Pdf(Word_path,Pdf_path):
     if sys.platform == 'win32':
@@ -32,10 +32,10 @@ def Word_to_Pdf(Word_path,Pdf_path):
         doc.Close()  # 关闭原来word文件
         word.Quit()
     if sys.platform == 'darwin' or sys.platform == 'linux':
-        #docx2pdf.convert(Word_path, Pdf_path)
-        cmd = "docx2pdf " + Word_path + " " + Pdf_path
-        os.system(cmd)
-    time.sleep(0.5)
+        docx2pdf.convert(Word_path, Pdf_path)
+        # cmd = "docx2pdf " + Word_path + " " + Pdf_path
+        # os.system(cmd)
+    time.sleep(0.1)
 
 
 def merge(name,file_path,res_path):
@@ -47,7 +47,7 @@ def merge(name,file_path,res_path):
             if not os.path.exists(res_path+'/temp_pdf'):
                 os.mkdir(res_path+'/temp_pdf')
             pdf_path=res_path+'/temp_pdf/'+filename+'.pdf'
-            print(pdf_path)
+            # print(pdf_path)
             shutil.copyfile(file,pdf_path)
         else:
             file=doc_to_docx(file)
@@ -58,8 +58,8 @@ def merge(name,file_path,res_path):
                 os.mkdir(res_path+'/temp_pdf')
             pdf_path=res_path+'/temp_pdf/'+filename+'.pdf'
             word_path=file
-            print('word_path',word_path)
-            print('pdf_path',pdf_path)
+            # print('word_path',word_path)
+            # print('pdf_path',pdf_path)
             Word_to_Pdf(word_path,pdf_path)
 
     files=[]
@@ -129,7 +129,7 @@ def merge(name,file_path,res_path):
 
 
     merge_res_path = res_path + '/'+name+'-合并文件'+'.pdf'
-    print(merge_res_path)
+    # print(merge_res_path)
     file_merger.write(merge_res_path)
 
 

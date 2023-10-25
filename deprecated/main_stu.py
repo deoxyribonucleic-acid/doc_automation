@@ -6,7 +6,7 @@ from MainEvent import Event
 from RegEvent import reg
 from ui.main_ui_stu import Ui_MainWindow
 from ui.register import Ui_DockWidget
-import login_stu
+import deprecated.login_stu as login_stu
 from ui.css_init import main_style
 from tools.db_operate import dbutils as dbutils
 import ui.excelImport as excelImport
