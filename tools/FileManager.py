@@ -1,10 +1,13 @@
+import glob
 import os, sys
+from tools import global_variable as glv
 from PyQt5.Qt import QApplication, QMainWindow, QLabel
-
 # 获取路径
 def getPath(fileName):
-    path = os.path.join(os.path.dirname(sys.argv[0].rsplit('/',2)[0]), fileName)
-    # path = os.getcwd() + '/' + fileName
+    if sys.platform == 'darwin' and not glv.get('debug'):
+        path = os.path.join(os.path.dirname(sys.argv[0].rsplit('/',2)[0]), fileName)
+    else:
+        path = os.path.join(os.path.dirname(sys.argv[0]), fileName)
     return path
 
 # Debug Only

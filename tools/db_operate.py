@@ -236,7 +236,7 @@ class student(QObject):
 
 class dbutils:
     @staticmethod
-    def batch_import(input_path,db_obj=student()):
+    def batch_import(input_path,db_obj):
         #先检测整个table，确保数据无误再输入，若有误直接弹出报错窗口
         try:
             data = pd.read_excel(input_path)

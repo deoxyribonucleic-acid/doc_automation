@@ -1,13 +1,18 @@
 import sys
+
+from tools import global_variable as glv
+glv._init()
+
 import PyQt5.QtCore as QtCore
 from PyQt5.QtCore import pyqtSignal
 from PyQt5.QtWidgets import QMainWindow, QDockWidget, QMessageBox, QApplication
-from MainEvent import Event
-from RegEvent import reg
 from ui.main_ui_teacher import Ui_MainWindow
 from ui.register import Ui_DockWidget
 from ui.css_init import main_style
 from ui import excelImport
+
+from MainEvent import Event
+from RegEvent import reg
 from tools.db_operate import dbutils
 
 class reg_ui(QDockWidget,Ui_DockWidget):
@@ -307,7 +312,11 @@ class main_ui(QMainWindow,Ui_MainWindow):
         else:
             self.zhichen_input.setStyleSheet(main_style.input_box())
 
-if __name__ == '__main__':
+def main():
+    glv.set('debug', False)
+    if sys.argv[-1] == 'debug':
+        glv.set('debug', True)
+        # print('debug mode')
     v_compare = QtCore.QVersionNumber(5, 6, 0)
     v_current = QtCore.QVersionNumber.fromString(QtCore.QT_VERSION_STR)[0]
     if QtCore.QVersionNumber.compare(v_current, v_compare) >= 0:
@@ -322,3 +331,6 @@ if __name__ == '__main__':
     fc.init()
 
     sys.exit(app.exec_())
+if __name__ == '__main__':
+    main()
+
