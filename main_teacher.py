@@ -47,7 +47,7 @@ class main_ui(QMainWindow,Ui_MainWindow):
         self.css_init()
         self.stackedWidget.setCurrentIndex(1)
         self.toolBar.hide()
-        self.radioButton.setChecked(True)
+        self.init_mode()
 
     def css_init(self):
         self.setStyleSheet(main_style.main_window())
@@ -91,7 +91,7 @@ class main_ui(QMainWindow,Ui_MainWindow):
         while(True):
             stu_table=self.controller.read_all_student()
             if stu_table.shape[0]==0:
-                self.controller.choose_and_import()
+                # self.controller.choose_and_import()
                 QMessageBox.warning(self,"警告","学生列表为空，请录入或导入学生信息！")
                 break
             else:
@@ -171,6 +171,23 @@ class main_ui(QMainWindow,Ui_MainWindow):
         for index, row in stu_table.iterrows():
             item = str(index) + ':' + str(row.stu_name)
             self.choice_stu.addItem(item)
+
+    def init_mode(self):
+        if glv.get('mode') == 'teacher':
+            self.radioButton.setChecked(True)
+            self.radioButton.setEnabled(False)
+            self.radioButton_2.setChecked(False)
+            self.radioButton_2.setEnabled(False)
+            self.controller.teacher_mode()
+        elif glv.get('mode') == 'student':
+            self.radioButton.setChecked(False)
+            self.radioButton_2.setChecked(True)
+            self.radioButton.setEnabled(False)
+            self.radioButton_2.setEnabled(False)
+            self.controller.student_mode()
+        else:
+            self.radioButton.setChecked(True)
+            self.radioButton_2.setChecked(False)
 
 
     # def show_web(self):
@@ -256,7 +273,6 @@ class main_ui(QMainWindow,Ui_MainWindow):
         self.title_input.editingFinished.connect(lambda:self.update(self.id_input.text(),'title',self.title_input.text()))
         self.major_select.currentTextChanged.connect(self.controller.update_school_and_major)
 
-
         #update score sect1 9 parts
         self.com_1_1.editingFinished.connect(lambda:self.update(self.id_input.text(),'com_1_1',self.com_1_1.text()))
         self.com_1_2.editingFinished.connect(lambda:self.update(self.id_input.text(),'com_1_2',self.com_1_2.text()))
@@ -312,11 +328,21 @@ class main_ui(QMainWindow,Ui_MainWindow):
         else:
             self.zhichen_input.setStyleSheet(main_style.input_box())
 
-def main():
+def main(args=None):
     glv.set('debug', False)
-    if sys.argv[-1] == 'debug':
-        glv.set('debug', True)
-        # print('debug mode')
+    glv.set('mode', 'full')
+    if args is None:
+        args = sys.argv[1:]
+    for arg in args:
+        if arg == 'debug':
+            glv.set('debug', True)
+        elif arg == 'studnet':
+            glv.set('mode', 'simple')
+        elif arg == 'teacher':
+            glv.set('mode', 'teacher')
+        elif arg == 'full':
+            glv.set('mode', 'full')
+
     v_compare = QtCore.QVersionNumber(5, 6, 0)
     v_current = QtCore.QVersionNumber.fromString(QtCore.QT_VERSION_STR)[0]
     if QtCore.QVersionNumber.compare(v_current, v_compare) >= 0:

@@ -131,7 +131,7 @@ class Event:
         # print('执行了选择指导老师')
         total_path = QFileDialog.getOpenFileNames(self.parent, '选择图片文件', os.getcwd(), '图片文件(*.jpg *png)"')[0]
         self.zdls = total_path
-        sig_dir=os.getcwd()()+'/signature/'+self.parent.name_input.text()
+        sig_dir=os.getcwd()+'/signature/'+self.parent.name_input.text()
         if not os.path.exists(sig_dir):
             os.mkdir(sig_dir)
         sig_path=''
@@ -156,7 +156,7 @@ class Event:
     def choice_xzzz_file(self):
         total_path = QFileDialog.getOpenFileNames(self.parent, '选择图片文件', os.getcwd(), '图片文件(*.jpg *png)"')[0]
         self.xzzz = total_path
-        sig_dir = os.getcwd()() + '/signature/' + self.parent.name_input.text()
+        sig_dir = os.getcwd() + '/signature/' + self.parent.name_input.text()
         if not os.path.exists(sig_dir):
             os.mkdir(sig_dir)
         sig_path = ''
@@ -179,7 +179,7 @@ class Event:
     def choice_xzcy_file(self):
         total_path = QFileDialog.getOpenFileNames(self.parent, '选择图片文件', os.getcwd(), '图片文件(*.jpg *png)"')[0]
         self.xzcy = total_path
-        sig_dir = os.getcwd()() + '/signature/' + self.parent.name_input.text()
+        sig_dir = os.getcwd() + '/signature/' + self.parent.name_input.text()
         if not os.path.exists(sig_dir):
             os.mkdir(sig_dir)
         sig_path = ''
