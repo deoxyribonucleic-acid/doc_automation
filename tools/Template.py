@@ -1,5 +1,5 @@
-import os
-import re
+from os import listdir
+from re import findall
 
 from docxtpl import DocxTemplate
 from tools.FileManager import getPath
@@ -9,10 +9,10 @@ def Template(save_path,data):
     graduation_design=data
     path = getPath("File_template/")
     files = []
-    for file in os.listdir(path):
+    for file in listdir(path):
         files.append(path + file)
     for file in files:
-        filename = re.findall(r"File_template/(.+?)-模板", file)
+        filename = findall(r"File_template/(.+?)-模板", file)
         if len(filename)==0:
             # print("Template.py: found dirty file {} in template folder".format(file))
             continue

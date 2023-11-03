@@ -1,6 +1,3 @@
-import os
-import re
-
 from docxtpl import DocxTemplate
 from tools.FileManager import getPath
 def assess(mode,save_path,data):

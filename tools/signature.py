@@ -1,8 +1,5 @@
-import os
-
 from docx import Document
 from docx.shared import Inches
-from tools.doc2docx import doc_to_docx
 
 def center_insert_img(doc, ZDLS,XZZZ,XZCY):
     # print("插入签名")

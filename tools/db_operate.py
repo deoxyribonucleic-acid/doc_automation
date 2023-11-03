@@ -1,4 +1,4 @@
-import os
+from os import path, mkdir
 
 import pandas as pd
 from numpy import nan
@@ -14,9 +14,9 @@ class student(QObject):
         super(student, self).__init__()
         
         self.table_path = getPath('database/student.csv')
-        if not os.path.exists(getPath('database')):
-            os.mkdir(getPath('database'))
-        if not os.path.exists(self.table_path):
+        if not path.exists(getPath('database')):
+            mkdir(getPath('database'))
+        if not path.exists(self.table_path):
             table=pd.DataFrame(columns=['ID','stu_name','academy','major','grade','banji','title','teacher','zhichen','zdls','xzzz','xzcy',
             'com_1_1','com_1_2','com_1_3','com_1_4','com_1_5','com_1_6','com_1_7','com_1_8','com_1_9',
             'com_2_1','com_2_2','com_2_3','com_2_4','com_2_5','com_2_6','com_2_7','com_2_8',

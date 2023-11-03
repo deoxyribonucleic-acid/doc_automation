@@ -1,3 +1,4 @@
+@echo off
 echo "which build do you want to generate?"
 echo "1. teacher"
 echo "2. student"
@@ -28,6 +29,9 @@ xcopy File_template build\teacher\File_template /s /y
 echo "add database"
 mkdir build\teacher\database
 xcopy database build\teacher\database /s /y
+echo "add signature"
+mkdir build\teacher\signature
+xcopy signature build\teacher\signature /s /y
 echo "finished generating teacher.exe"
 goto end
 
@@ -49,8 +53,11 @@ echo "add File_template"
 mkdir build\student\File_template
 xcopy File_template build\student\File_template /s /y
 echo "add database"
-mkdir build\student\database
+mkdir build\student\database\
 xcopy database build\student\database /s /y
+echo "add signature"
+mkdir build\student\signature
+xcopy signature build\student\signature /s /y
 echo "finished generating student.exe"
 
 goto end
@@ -75,6 +82,12 @@ xcopy File_template build\full\File_template /s /y
 echo "add database"
 mkdir build\full\database
 xcopy database build\full\database /s /y
+echo "add signature"
+mkdir build\full\signature
+xcopy signature build\full\signature /s /y
 echo "finished generating full.exe"
 
 goto end
+
+:end
+```

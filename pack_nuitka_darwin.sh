@@ -20,6 +20,8 @@ then
     cp -r File_template build/student/student_entry.app
     echo "add database"
     cp -r database build/student/student_entry.app
+    echo "add signature"
+    cp -r signature build/student/student_entry.app
     echo "add icon"
     cp -r build/student/Resources build/student/student_entry.app/Contents/
     echo "add info.plist"
@@ -47,6 +49,8 @@ then
     cp -r File_template build/teacher/teacher_entry.app
     echo "add database"
     cp -r database build/teacher/teacher_entry.app
+    echo "add signature"
+    cp -r signature build/teacher/teacher_entry.app
     echo "add icon"
     cp -r build/teacher/Resources build/teacher/teacher_entry.app/Contents/
     echo "add info.plist"
@@ -74,6 +78,8 @@ then
     cp -r File_template build/full/full_entry.app
     echo "add database"
     cp -r database build/full/full_entry.app
+    echo "add signature"
+    cp -r signature build/full/full_entry.app
     echo "add icon"
     cp -r build/full/Resources build/full/full_entry.app/Contents/
     echo "add info.plist"
