@@ -336,8 +336,8 @@ def main(args=None):
     for arg in args:
         if arg == 'debug':
             glv.set('debug', True)
-        elif arg == 'studnet':
-            glv.set('mode', 'simple')
+        elif arg == 'student':
+            glv.set('mode', 'student')
         elif arg == 'teacher':
             glv.set('mode', 'teacher')
         elif arg == 'full':
