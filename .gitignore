@@ -12,3 +12,5 @@ Pipfile
 .vscode/settings.json
 nuitka-crash-report.xml
 test/
+
+database/student.csv
