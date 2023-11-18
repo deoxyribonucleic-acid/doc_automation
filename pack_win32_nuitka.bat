@@ -16,8 +16,8 @@ python -m nuitka ^
           --output-dir=build\teacher\ ^
           --assume-yes-for-download ^
           --windows-product-version=1.0 ^
-          --include-data-dir=database=database,File_template=File_template ^
-          --onefile ^
+          --standalone ^
+          --remove-output ^
           --plugin-enable=pyqt5 ^
           --windows-disable-console ^
           --windows-icon-from-ico=icon\icon.ico ^
@@ -42,8 +42,8 @@ python -m nuitka ^
           --output-dir=build\student\ ^
           --assume-yes-for-download ^
           --windows-product-version=1.0 ^
-          --include-data-dir=database=database,File_template=File_template ^
-          --onefile ^
+          --standalone ^
+          --remove-output ^
           --plugin-enable=pyqt5 ^
           --windows-disable-console ^
           --windows-icon-from-ico=icon\icon.ico ^
@@ -69,9 +69,9 @@ python -m nuitka ^
           --output-dir=build\full\ ^
           --assume-yes-for-download ^
           --windows-product-version=1.0 ^
-          --include-data-dir=database=database,File_template=File_template ^
-          --onefile ^
           --plugin-enable=pyqt5 ^
+          --standalone ^
+          --remove-output ^
           --windows-disable-console ^
           --windows-icon-from-ico=icon\icon.ico ^
           full_entry.py
@@ -90,4 +90,3 @@ echo "finished generating full.exe"
 goto end
 
 :end
-```
