@@ -4,7 +4,7 @@ read -p "1. student 2. teacher 3. full: 4. test: " build_type
 if [ $build_type == 1 ]
 then
     echo "pack student"
-    python -m nuitka \
+    python3 -m nuitka \
           --follow-imports \
           --output-dir=build/student \
           --assume-yes-for-download \
@@ -33,7 +33,7 @@ then
 elif [ $build_type == 2 ]
 then
     echo "pack teacher"
-    python -m nuitka \
+    python3 -m nuitka \
           --follow-imports \
           --output-dir=build/teacher \
           --assume-yes-for-download \
@@ -62,7 +62,7 @@ then
 elif [ $build_type == 3 ]
 then
     echo "pack full"
-    python -m nuitka \
+    python3 -m nuitka \
           --follow-imports \
           --output-dir=build/full \
           --assume-yes-for-download \
@@ -91,7 +91,7 @@ then
 elif [ $build_type == 4 ]
 then
     echo "pack test"
-    python -m nuitka \
+    python3 -m nuitka \
           --follow-imports \
           --output-dir=build/test \
           --assume-yes-for-download \
@@ -104,9 +104,9 @@ then
           --macos-app-icon=icon/icon.ico \
           build_test.py
     echo "add icon"
-    cp -r build/teacher/Resources build/test/build_test.app/Contents/
+    cp -r build/test/Resources build/test/build_test.app/Contents/
     echo "add info.plist"
-    cp -r build/teacher/Info.plist build/test/build_test.app/Contents/
+    cp -r build/test/Info.plist build/test/build_test.app/Contents/
     echo "all done"
     open build/
     exit 0
