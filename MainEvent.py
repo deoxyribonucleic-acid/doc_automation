@@ -213,7 +213,8 @@ class Event:
             try:
                 while i < list.count():
                     path=list.item(i).text()
-                    path=doc_to_docx(path)
+                    # path=doc_to_docx(path)
+                    # print(self.zdls)
                     signature_fill(path, self.zdls, self.xzzz, self.xzcy)
                     i = i + 1
                 QMessageBox.about(self.parent, "success", "签名填充成功!")
