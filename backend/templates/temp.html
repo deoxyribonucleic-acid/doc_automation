@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link href="favicon.ico" rel="shortcut icon">
+</head>
+<body>
+
+hello---{{uname}}
+
+<ol>
+    <li>{{uname}}</li>
+    <li>{{l[0]}}</li>
+    <li>{{d.get('k2')}}</li>
+    <li>{{d['k1']}}</li>
+    <li>{{p.pname}}</li>
+    <li>{{s}}</li>
+</ol>
+
+{% for li in rev(l) %}
+    {{li}}<br/>
+{% end %}
+
+<br/>
+
+{% for k,v in d.items() %}
+    {{k}}---{{v}}<br/>
+{% end %}
+
+<br/>
+
+{% if p == None %}
+    None
+{% else %}
+    Person Object
+
+{% end %}
+
+</body>
+</html>
