@@ -6,7 +6,7 @@ glv._init()
 import PyQt5.QtCore as QtCore
 from PyQt5.QtCore import pyqtSignal
 from PyQt5.QtWidgets import QMainWindow, QDockWidget, QMessageBox, QApplication
-from ui.main_ui_teacher import Ui_MainWindow
+from ui.main_ui_teacher import Ui_MainWindow 
 from ui.register import Ui_DockWidget
 from ui.css_init import main_style
 from ui import excelImport

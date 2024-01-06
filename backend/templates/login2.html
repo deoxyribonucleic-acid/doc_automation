@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="utf-8" />
+	<title></title>
+	<link rel="stylesheet" href="./static/css/index.css">
+</head>
+
+<body>
+	<div class="logo">
+		<h3>毕设文档管理系统</h3>
+		<img src="./static/images/bg.jpg" alt="">
+		<div class="logo_son">
+			<ul>
+				<li class="nav_active">登录</li>
+				<li>注册</li>
+			</ul>
+			<div class="login">
+				<form action="/student_register/" method="post">
+					<p><input type="text" placeholder="请输入账号" name="uname"></p>
+					<p><input type="password"placeholder="请输入密码" name="pwd"></p>
+					<button>登录</button>
+				</form>
+			</div>
+			<div class="register">
+				<form action="/student_register/" method="post">
+					<p><input type="text"placeholder="请设置账号" name="newuname"></p>
+					<p><input type="text" placeholder="请设置密码" name="newpwd"></p>
+					<p><input type="text" placeholder="请再次设置密码"></p>
+					<p><input type="text" placeholder="请输入导师工号" name="tid"></p>
+					<!-- <p><button>注册</button></p> -->
+					<p><input type="submit" value="注册"/></p>
+			    </form>
+			</div>
+		</div>
+	</div>
+	<script src="./static/js/index.js"></script>
+</body>
+</html>
