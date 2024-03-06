@@ -7,6 +7,7 @@ from PyQt5.QtWidgets import QApplication, QMainWindow, QFileDialog, QMessageBox,
 from tools.FileManager import getPath
 
 import re
+import torndb_for_python3 as torndb
 
 class student(QObject):
     import_complete = pyqtSignal()
@@ -122,6 +123,43 @@ class student(QObject):
         self.table = pd.read_csv(self.table_path, index_col='ID',encoding='utf-8')
         self.table.loc[ID, attribute] = data
         self.table.to_csv(self.table_path,index=True,index_label="ID",encoding='utf-8')
+        return result
+        
+###上传开题、中期、答辩成绩
+    def proposal(self,ID,attribute,data):
+        result,msg = self.verify_item(attribute,data)
+        if not result:
+            QMessageBox.warning(QApplication.activeWindow(), "提示", msg)
+            return False
+        conn = torndb.Connection(host='127.0.0.1', database='db01', user='root', password='1234567')
+        data_float = float(data)
+        sql = 'update t_proposal_review set %s="%f" where s_id="%s"'%(attribute,data_float,ID)
+        conn.update(sql)
+        conn.close()
+        return result
+    
+    def midterm(self,ID,attribute,data):
+        result,msg = self.verify_item(attribute,data)
+        if not result:
+            QMessageBox.warning(QApplication.activeWindow(), "提示", msg)
+            return False
+        conn = torndb.Connection(host='127.0.0.1', database='db01', user='root', password='1234567')
+        data_float = float(data)
+        sql = 'update t_midterm_review set %s="%f" where s_id="%s"'%(attribute,data_float,ID)
+        conn.update(sql)
+        conn.close()
+        return result
+    
+    def defense(self,ID,attribute,data):
+        result,msg = self.verify_item(attribute,data)
+        if not result:
+            QMessageBox.warning(QApplication.activeWindow(), "提示", msg)
+            return False
+        conn = torndb.Connection(host='127.0.0.1', database='db01', user='root', password='1234567')
+        data_float = float(data)
+        sql = 'update t_defense_review set %s="%f" where s_id="%s"'%(attribute,data_float,ID)
+        conn.update(sql)
+        conn.close()
         return result
     
     def update_score(self,ID,attribute,score):

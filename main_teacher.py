@@ -274,35 +274,35 @@ class main_ui(QMainWindow,Ui_MainWindow):
         self.major_select.currentTextChanged.connect(self.controller.update_school_and_major)
 
         #update score sect1 9 parts
-        self.com_1_1.editingFinished.connect(lambda:self.update(self.id_input.text(),'com_1_1',self.com_1_1.text()))
-        self.com_1_2.editingFinished.connect(lambda:self.update(self.id_input.text(),'com_1_2',self.com_1_2.text()))
-        self.com_1_3.editingFinished.connect(lambda:self.update(self.id_input.text(),'com_1_3',self.com_1_3.text()))
-        self.com_1_4.editingFinished.connect(lambda:self.update(self.id_input.text(),'com_1_4',self.com_1_4.text()))
-        self.com_1_5.editingFinished.connect(lambda:self.update(self.id_input.text(),'com_1_5',self.com_1_5.text()))
-        self.com_1_6.editingFinished.connect(lambda:self.update(self.id_input.text(),'com_1_6',self.com_1_6.text()))
-        self.com_1_7.editingFinished.connect(lambda:self.update(self.id_input.text(),'com_1_7',self.com_1_7.text()))
-        self.com_1_8.editingFinished.connect(lambda:self.update(self.id_input.text(),'com_1_8',self.com_1_8.text()))
-        self.com_1_9.editingFinished.connect(lambda:self.update(self.id_input.text(),'com_1_9',self.com_1_9.text()))
+        self.com_1_1.editingFinished.connect(lambda:self.update_proposal(self.id_input.text(),'com_1_1',self.com_1_1.text()))
+        self.com_1_2.editingFinished.connect(lambda:self.update_proposal(self.id_input.text(),'com_1_2',self.com_1_2.text()))
+        self.com_1_3.editingFinished.connect(lambda:self.update_proposal(self.id_input.text(),'com_1_3',self.com_1_3.text()))
+        self.com_1_4.editingFinished.connect(lambda:self.update_proposal(self.id_input.text(),'com_1_4',self.com_1_4.text()))
+        self.com_1_5.editingFinished.connect(lambda:self.update_proposal(self.id_input.text(),'com_1_5',self.com_1_5.text()))
+        self.com_1_6.editingFinished.connect(lambda:self.update_proposal(self.id_input.text(),'com_1_6',self.com_1_6.text()))
+        self.com_1_7.editingFinished.connect(lambda:self.update_proposal(self.id_input.text(),'com_1_7',self.com_1_7.text()))
+        self.com_1_8.editingFinished.connect(lambda:self.update_proposal(self.id_input.text(),'com_1_8',self.com_1_8.text()))
+        self.com_1_9.editingFinished.connect(lambda:self.update_proposal(self.id_input.text(),'com_1_9',self.com_1_9.text()))
         #update score sect2 8 parts
-        self.com_2_1.editingFinished.connect(lambda:self.update(self.id_input.text(),'com_2_1',self.com_2_1.text()))
-        self.com_2_2.editingFinished.connect(lambda:self.update(self.id_input.text(),'com_2_2',self.com_2_2.text()))
-        self.com_2_3.editingFinished.connect(lambda:self.update(self.id_input.text(),'com_2_3',self.com_2_3.text()))
-        self.com_2_4.editingFinished.connect(lambda:self.update(self.id_input.text(),'com_2_4',self.com_2_4.text()))
-        self.com_2_5.editingFinished.connect(lambda:self.update(self.id_input.text(),'com_2_5',self.com_2_5.text()))
-        self.com_2_6.editingFinished.connect(lambda:self.update(self.id_input.text(),'com_2_6',self.com_2_6.text()))
-        self.com_2_7.editingFinished.connect(lambda:self.update(self.id_input.text(),'com_2_7',self.com_2_7.text()))
-        self.com_2_8.editingFinished.connect(lambda:self.update(self.id_input.text(),'com_2_8',self.com_2_8.text()))
+        self.com_2_1.editingFinished.connect(lambda:self.update_midterm(self.id_input.text(),'com_2_1',self.com_2_1.text()))
+        self.com_2_2.editingFinished.connect(lambda:self.update_midterm(self.id_input.text(),'com_2_2',self.com_2_2.text()))
+        self.com_2_3.editingFinished.connect(lambda:self.update_midterm(self.id_input.text(),'com_2_3',self.com_2_3.text()))
+        self.com_2_4.editingFinished.connect(lambda:self.update_midterm(self.id_input.text(),'com_2_4',self.com_2_4.text()))
+        self.com_2_5.editingFinished.connect(lambda:self.update_midterm(self.id_input.text(),'com_2_5',self.com_2_5.text()))
+        self.com_2_6.editingFinished.connect(lambda:self.update_midterm(self.id_input.text(),'com_2_6',self.com_2_6.text()))
+        self.com_2_7.editingFinished.connect(lambda:self.update_midterm(self.id_input.text(),'com_2_7',self.com_2_7.text()))
+        self.com_2_8.editingFinished.connect(lambda:self.update_midterm(self.id_input.text(),'com_2_8',self.com_2_8.text()))
         #update score sect3 10 parts
-        self.com_3_1.editingFinished.connect(lambda:self.update(self.id_input.text(),'com_3_1',self.com_3_1.text()))
-        self.com_3_2.editingFinished.connect(lambda:self.update(self.id_input.text(),'com_3_2',self.com_3_2.text()))
-        self.com_3_3.editingFinished.connect(lambda:self.update(self.id_input.text(),'com_3_3',self.com_3_3.text()))
-        self.com_3_4.editingFinished.connect(lambda:self.update(self.id_input.text(),'com_3_4',self.com_3_4.text()))
-        self.com_3_5.editingFinished.connect(lambda:self.update(self.id_input.text(),'com_3_5',self.com_3_5.text()))
-        self.com_3_6.editingFinished.connect(lambda:self.update(self.id_input.text(),'com_3_6',self.com_3_6.text()))
-        self.com_3_7.editingFinished.connect(lambda:self.update(self.id_input.text(),'com_3_7',self.com_3_7.text()))
-        self.com_3_8.editingFinished.connect(lambda:self.update(self.id_input.text(),'com_3_8',self.com_3_8.text()))
-        self.com_3_9.editingFinished.connect(lambda:self.update(self.id_input.text(),'com_3_9',self.com_3_9.text()))
-        self.com_3_10.editingFinished.connect(lambda:self.update(self.id_input.text(),'com_3_10',self.com_3_10.text()))
+        self.com_3_1.editingFinished.connect(lambda:self.update_defense(self.id_input.text(),'com_3_1',self.com_3_1.text()))
+        self.com_3_2.editingFinished.connect(lambda:self.update_defense(self.id_input.text(),'com_3_2',self.com_3_2.text()))
+        self.com_3_3.editingFinished.connect(lambda:self.update_defense(self.id_input.text(),'com_3_3',self.com_3_3.text()))
+        self.com_3_4.editingFinished.connect(lambda:self.update_defense(self.id_input.text(),'com_3_4',self.com_3_4.text()))
+        self.com_3_5.editingFinished.connect(lambda:self.update_defense(self.id_input.text(),'com_3_5',self.com_3_5.text()))
+        self.com_3_6.editingFinished.connect(lambda:self.update_defense(self.id_input.text(),'com_3_6',self.com_3_6.text()))
+        self.com_3_7.editingFinished.connect(lambda:self.update_defense(self.id_input.text(),'com_3_7',self.com_3_7.text()))
+        self.com_3_8.editingFinished.connect(lambda:self.update_defense(self.id_input.text(),'com_3_8',self.com_3_8.text()))
+        self.com_3_9.editingFinished.connect(lambda:self.update_defense(self.id_input.text(),'com_3_9',self.com_3_9.text()))
+        self.com_3_10.editingFinished.connect(lambda:self.update_defense(self.id_input.text(),'com_3_10',self.com_3_10.text()))
 
     def update(self,id,attribute,data):
         if  '?' in self.banji_input.text():
@@ -316,6 +316,15 @@ class main_ui(QMainWindow,Ui_MainWindow):
             self.zhichen_input.setStyleSheet(main_style.input_box())
 
         self.controller.update_db(id, attribute, data)
+
+    def update_proposal(self,id,attribute,data):
+        self.controller.student_operate.proposal(id,attribute,data)
+
+    def update_midterm(self,id,attribute,data):
+        self.controller.student_operate.midterm(id,attribute,data)
+
+    def update_defense(self,id,attribute,data):
+        self.controller.student_operate.defense(id,attribute,data)
 
     def update_css(self):
         if '?' in self.banji_input.text():

@@ -5,9 +5,13 @@ import MySQLdb
 import hashlib
 import os
 import secrets
+import toml
+
+toml_file_path = "./config.toml"
+data = toml.load(toml_file_path)
 
 def _getConn():
-    return MySQLdb.connect(host='127.0.0.1',user='root',passwd='1234567',db='db01',port=3306)
+    return MySQLdb.connect(host=data['owner']['host'],user=data['owner']['user'],passwd=data['owner']['passwd'],db=data['owner']['db'],port=data['owner']['port'])
 
 def generate_salt(length=16):
     """生成随机盐值"""
@@ -42,34 +46,47 @@ class RegisterHandler(RequestHandler):
         self.conn = conn
 
     def get(self, *args, **kwargs):
-        self.render('templates/index.html')
+        self.render('templates/login_register_student.html')
 
     def post(self, *args, **kwargs):
         #获取请求参数
-        uname = self.get_argument('tname')
-        pwd = self.get_argument('tpwd')
+        uname = self.get_argument('newuname')
+        pwd = self.get_argument('newpwd')
         tid = self.get_argument('tid')
+        s_name = self.get_argument('s_name')
+        s_grade = self.get_argument('s_grade')
+        s_class = self.get_argument('s_class')
+        s_school = self.get_argument('s_school')
+        s_title = self.get_argument('s_title')
+        s_major = self.get_argument('s_major')
         hashed_password, salt = hash_password(pwd)
         cursor = self.conn.cursor()
-        t_id = cursor.execute('select t_no from t_teacher where t_id="%s"'%tid)
-        print(t_id)
-        if t_id is None:
+        t_rows = cursor.execute('select t_no from t_teacher where t_id="%s"'%tid)
+        s_rows = cursor.execute('select s_no from t_student where s_id="%s"'%uname)
+        print("t_rows=",t_rows)
+        if t_rows == 0:
             self.write('导师账号不存在！')
+        # 有bug需解决
+        elif s_rows > 0:
+            print("s_rows=",s_rows)
+            self.write("该账号已存在，无法重复注册！")
         else:
-            print(t_id)
             try:
                 # cursor = self.conn.cursor()
-                cursor.execute('insert into t_student values(null,"%s","%s","1","1","1","1","1","%s","1","%s")'%(uname,hashed_password,tid,salt))
+                cursor.execute('insert into t_student values(null,"%s","%s","%s","%s","%s","%s","%s","%s","%s","%s")'%(uname,hashed_password,s_name,s_grade,s_class,s_school,s_major,tid,s_title,salt))
+                cursor.execute('INSERT INTO t_proposal_review VALUES (%s, %s, %s, %s, %s, %s, %s, %s, %s, %s)', (uname, '0', '0', '0', '0', '0', '0', '0', '0', '0'))
+                cursor.execute('INSERT INTO t_midterm_review VALUES (%s, %s, %s, %s, %s, %s, %s, %s, %s)', (uname, '0', '0', '0', '0', '0', '0', '0', '0'))
+                cursor.execute('INSERT INTO t_defense_review VALUES (%s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s)', (uname, '0', '0', '0', '0', '0', '0', '0', '0', '0', '0'))
                 print(hashed_password)
                 self.conn.commit()
                 self.write('注册成功')
 
             except Exception as e:
-                print('insert into t_student values(null,"%s","%s","1","1","1","1","1","%s","1","%s")'%(uname,hashed_password,t_id,salt))
+                # print('insert into t_student values(null,"%s","%s","%s","%s","%s","%s","%s","%s","%s","%s")'%(uname,hashed_password,t_id,salt))
                 self.conn.rollback()
                 self.write('注册失败')
                 print(e)
-
+        return
 
 app = Application([
     (r'/student_register/',RegisterHandler,{'conn':_getConn()})

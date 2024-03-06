@@ -5,9 +5,13 @@ import MySQLdb
 import hashlib
 import os
 import secrets
+import toml
+
+toml_file_path = "./config.toml"
+data = toml.load(toml_file_path)
 
 def _getConn():
-    return MySQLdb.connect(host='127.0.0.1',user='root',passwd='1234567',db='db01',port=3306)
+    return MySQLdb.connect(host=data['owner']['host'],user=data['owner']['user'],passwd=data['owner']['passwd'],db=data['owner']['db'],port=data['owner']['port'])
 
 def generate_salt(length=16):
     """生成随机盐值"""
@@ -42,16 +46,18 @@ class RegisterHandler(RequestHandler):
         self.conn = conn
 
     def get(self, *args, **kwargs):
-        self.render('templates/teacher_register.html')
+        self.render('templates/login_register_teacher.html')
 
     def post(self, *args, **kwargs):
         #获取请求参数
-        uname = self.get_argument('tname')
-        pwd = self.get_argument('tpwd')
+        uname = self.get_argument('newuname')
+        pwd = self.get_argument('newpwd')
+        t_name = self.get_argument('t_name')
+        t_title = self.get_argument('t_title')
         hashed_password, salt = hash_password(pwd)
         try:
             cursor = self.conn.cursor()
-            cursor.execute('insert into t_teacher values(null,"%s","%s","1","1")'%(uname,hashed_password))
+            cursor.execute('insert into t_teacher values(null,"%s","%s","%s","%s")'%(uname,hashed_password,t_title,t_name))
             print(hashed_password)
             self.conn.commit()
             self.write('注册成功')
@@ -66,7 +72,9 @@ class RegisterHandler(RequestHandler):
 
 app = Application([
     (r'/teacher_register/',RegisterHandler,{'conn':_getConn()})
-])
+],
+static_path=os.path.join(os.path.dirname(__file__), "static")
+)
 
 #绑定地址和端口号
 app.listen(8000)
