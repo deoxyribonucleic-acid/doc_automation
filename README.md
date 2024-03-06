@@ -20,13 +20,17 @@
 
     - 教师端
 
-    ![tea_main.png](doc_imgs/tea_main.png)
+    <div align="center">
+    <img src=doc_imgs/tea_main.png width=60% />
+    </div>
 
     教师端支持模板生成、一键合并、签名填充、快速评审四个功能。点击对应的按钮即可快速跳转到对应功能。
 
     - 学生端
 
-    ![stu_main.png](doc_imgs/stu_main.png)
+    <div align="center">
+    <img src=doc_imgs/stu_main.png width=60% />
+    </div>
 
     学生端支持模板生成、签名填充两个功能。点击对应的按钮即可快速跳转到对应功能。
 
@@ -34,43 +38,60 @@
     
     - 学生信息管理界面位于页面顶部黑色区域，支持手动录入学生信息或基于excel模板批量导入学生信息。
     
-    ![Screenshot 2023-11-04 005205.png](doc_imgs/Screenshot_2023-11-04_005205.png)
+    <div align="center">
+    <img src=doc_imgs/Screenshot_2023-11-04_005205.png width=60% />
+    </div>
     
     - 点击当前学生可在下拉菜单中切换当前操作的学生。
 
-    ![Untitled](doc_imgs/Untitled.png)
+    <div align="center">
+    <img src=doc_imgs/Untitled.png width=60% />
+    </div>
     
     - 点击批量导入功能即可选择Excel文件（需使用软件提供的模板填写）并预览，点击Confirm按钮即可导入。若需要导入的Excel文件存在格式非法的字段，软件将报错提示。
     
-    ![Untitled](doc_imgs/Untitled%201.png)
-    
+    <div align="center">
+    <img src=doc_imgs/Untitled%201.png width=60% />
+    </div>
+
     - 点击手动录入即可手动输入学生信息，若输入格式不符合要求，软件将会报错提示。
     
-    ![Untitled](doc_imgs/Screenshot_2023-11-04_010121.png)
+    <div align="center">
+    <img src=doc_imgs/Screenshot_2023-11-04_010121.png width=60% />
+    </div>
     
 3. **模板生成：**
     
     - 点击模板生成界面，使用学生管理面板选择需要导出模板的学生。点击输出目录右侧按钮选择输出路径，再点击页面底部的生成按钮即可一键生成毕设文件模板。
     
-    ![Untitled](doc_imgs/Untitled%202.png)
+    <div align="center">
+    <img src=doc_imgs/Untitled%202.png width=60% />
+    </div>
     
 4. **签名填充：**
     
     - 进入签名填充页面后，首先需要点击学生管理面板下方的加号按钮导入电子签名图片。随后，点击待填充文件列表右侧的按钮选择需要填充签名的文件。最后点击底部填充签名按钮即可实现签名填充。
     
-    ![Untitled](doc_imgs/Untitled%203.png)
+    <div align="center">
+    <img src=doc_imgs/Untitled%203.png width=60% />
+    </div>
+
     
 5. **快速评审：**
     
     - 进入签名填充页面后，点击当前学生，选中当前需要评分的学生后，即可在下方评审面板中为各个项目评分。评分完成后，点击输出目录右侧按钮选择输出路径，再点击底部生成按钮即可生成带有评分信息的相关文件。若输入了非数字、非整数分数、超过上限的分数，软件将报错提示。每次填写的分数都会自动保存。
     
-    ![Untitled](doc_imgs/Untitled%204.png)
+    <div align="center">
+    <img src=doc_imgs/Untitled%204.png width=60% />
+    </div>
     
 6. **一键合并：**
     
     - 分别点击选择doc/docx文件和输出目录右侧的两个按钮，指定需要合并的文件和输出合并后的pdf目录。完成后点击生成按钮即可将所选文档合并成一个pdf。
-    
-    ![Untitled](doc_imgs/Untitled%205.png)
+
+    <div align="center">
+    <img src=doc_imgs/Untitled%205.png width=60% />
+    </div>
     
 
 ## 四、注意事项
