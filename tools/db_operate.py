@@ -9,6 +9,18 @@ from tools.FileManager import getPath
 import re
 import torndb_for_python3 as torndb
 
+from tornado.web import RequestHandler
+from tornado.web import Application
+from tornado.ioloop import IOLoop
+import MySQLdb
+import toml
+
+toml_file_path = "backend\config.toml"
+data = toml.load(toml_file_path)
+
+def _getConn():
+    return MySQLdb.connect(host=data['owner']['host'],user=data['owner']['user'],passwd=data['owner']['passwd'],db=data['owner']['db'],port=data['owner']['port'])
+
 class student(QObject):
     import_complete = pyqtSignal()
     def __init__(self):
@@ -124,7 +136,9 @@ class student(QObject):
         self.table.loc[ID, attribute] = data
         self.table.to_csv(self.table_path,index=True,index_label="ID",encoding='utf-8')
         return result
-        
+    
+
+
 ###上传开题、中期、答辩成绩
     def proposal(self,ID,attribute,data):
         result,msg = self.verify_item(attribute,data)
@@ -136,7 +150,7 @@ class student(QObject):
         sql = 'update t_proposal_review set %s="%f" where s_id="%s"'%(attribute,data_float,ID)
         conn.update(sql)
         conn.close()
-        return result
+        return attribute, data
     
     def midterm(self,ID,attribute,data):
         result,msg = self.verify_item(attribute,data)
@@ -345,7 +359,7 @@ class dbutils:
             'teacher':item['指导教师'],
             'zhichen':item['指导教师职称'],
         }
-        ## print(t_item)
+        ## print(t_item)    
         return t_item
     
     @staticmethod
@@ -399,6 +413,9 @@ class dbutils:
                     break
         return result,err_msg
     
+
+
+
 if __name__=="__main__":
     #dbutils.batch_import(os.path.join(os.getcwd(),'database','import.xlsx'))
     # print(student.verify_item('com_1_1','-100'))
@@ -408,4 +425,5 @@ if __name__=="__main__":
     # print(student.verify_item('com_1_1','11'))
     # print(student.verify_item('com_1_1','20'))
     # print(student.verify_item('com_1_1','27'))
+    #绑定地址和端口号
     pass

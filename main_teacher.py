@@ -15,6 +15,8 @@ from MainEvent import Event
 from RegEvent import reg
 from tools.db_operate import dbutils
 
+import requests
+
 class reg_ui(QDockWidget,Ui_DockWidget):
     update_db=pyqtSignal()
 
@@ -318,13 +320,35 @@ class main_ui(QMainWindow,Ui_MainWindow):
         self.controller.update_db(id, attribute, data)
 
     def update_proposal(self,id,attribute,data):
-        self.controller.student_operate.proposal(id,attribute,data)
+        status,msg = self.controller.student_operate.verify_item(attribute,data)
+        if status == True:
+            url = 'http://localhost:8888/update_proposal/'  
+            data_dict = {'attribute': attribute,'data':data,'ID':id}
+            r = requests.post(url, data_dict)
+            print("request: ", r.text)
+        else:
+            QMessageBox.warning(self,"警告",msg)
+        # print(response.json())
 
     def update_midterm(self,id,attribute,data):
-        self.controller.student_operate.midterm(id,attribute,data)
+        status,msg = self.controller.student_operate.verify_item(attribute,data)
+        if status == True:
+            url = 'http://localhost:8888/update_midterm/'  
+            data_dict = {'attribute': attribute,'data':data,'ID':id}
+            requests.post(url, data_dict)
+        else:
+            QMessageBox.warning(self,"警告",msg)
+        # print(response.json())
 
     def update_defense(self,id,attribute,data):
-        self.controller.student_operate.defense(id,attribute,data)
+        status,msg = self.controller.student_operate.verify_item(attribute,data)
+        if status == True:
+            url = 'http://localhost:8888/update_defense/'  
+            data_dict = {'attribute': attribute,'data':data,'ID':id}
+            requests.post(url, data_dict)
+        else:
+            QMessageBox.warning(self,"警告",msg)
+        # print(response.json())
 
     def update_css(self):
         if '?' in self.banji_input.text():
@@ -368,4 +392,5 @@ def main(args=None):
     sys.exit(app.exec_())
 if __name__ == '__main__':
     main()
+    
 
