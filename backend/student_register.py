@@ -7,7 +7,7 @@ import os
 import secrets
 import toml
 
-toml_file_path = "./config.toml"
+toml_file_path = "backend\config.toml"
 data = toml.load(toml_file_path)
 
 def _getConn():

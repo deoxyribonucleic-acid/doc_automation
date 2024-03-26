@@ -13,6 +13,11 @@ from tools.doc2docx import doc_to_docx
 from tools.db_operate import dbutils
 from pandas import read_excel
 from tools.FileManager import getPath
+import tools.internet
+import json
+
+from tools import global_variable as glv
+
 class Event:
     zdls=[]
     xzzz=[]
@@ -24,6 +29,25 @@ class Event:
         self.parent=parent
         self.student_operate=tools.db_operate.student()
 
+    def login_mode(self):
+        uname = self.parent.username.text()
+        pwd = self.parent.password.text()
+        response_text = tools.internet.update_id(uname,pwd)
+        response_dict = json.loads(response_text)
+        status = response_dict['status']
+        
+        if status == "success":
+            msg = response_dict['received']
+            QMessageBox.warning(self.parent,"欢迎",msg)
+            acc_type =  response_dict['account_type']
+            glv.set('mode',acc_type)
+            self.parent.init_mode()
+            self.parent.stackedWidget.setCurrentIndex(2)
+        else:
+            msg = response_dict['message']
+            QMessageBox.warning(self.parent,"警告",msg)
+
+        
 
 #模板生成
     def read_all_student(self):
@@ -422,3 +446,4 @@ class Event:
         self.parent.signature_fill.setVisible(True)
         self.parent.assess.setVisible(True)
         self.parent.doc_to_docx.setVisible(False)
+    

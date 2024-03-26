@@ -6,16 +6,18 @@ glv._init()
 import PyQt5.QtCore as QtCore
 from PyQt5.QtCore import pyqtSignal
 from PyQt5.QtWidgets import QMainWindow, QDockWidget, QMessageBox, QApplication
-from ui.main_ui_teacher import Ui_MainWindow 
+from ui.main_teacher_new_ui import Ui_MainWindow 
 from ui.register import Ui_DockWidget
 from ui.css_init import main_style
 from ui import excelImport
+from PyQt5 import uic
 
 from MainEvent import Event
 from RegEvent import reg
 from tools.db_operate import dbutils
 
 import requests
+
 
 class reg_ui(QDockWidget,Ui_DockWidget):
     update_db=pyqtSignal()
@@ -45,11 +47,14 @@ class main_ui(QMainWindow,Ui_MainWindow):
         self.controller=Event(self)
         self.activateWindow()
         self.setupUi(self)
+
+        # uic.loadUi('ui/login.ui', self)
         self.bind()
         self.css_init()
         self.stackedWidget.setCurrentIndex(1)
         self.toolBar.hide()
         self.init_mode()
+        
 
     def css_init(self):
         self.setStyleSheet(main_style.main_window())
@@ -100,7 +105,7 @@ class main_ui(QMainWindow,Ui_MainWindow):
                 self.init_info()
                 break
             
-            
+    #从本地数据库读取初始信息        
     def init_info(self):
         stu_table=self.controller.read_all_student()
         stu = stu_table.head(1)
@@ -260,6 +265,8 @@ class main_ui(QMainWindow,Ui_MainWindow):
         self.pushButton_2.clicked.connect(self.controller.login2signature)
         self.pushButton_3.clicked.connect(self.controller.login2assess)
         self.pushButton_4.clicked.connect(self.controller.login2merge)
+        #绑定登录按钮
+        self.loginButton.clicked.connect(self.controller.login_mode)
 
         self.radioButton.toggled.connect(self.controller.teacher_mode)
         self.radioButton_2.toggled.connect(self.controller.student_mode)

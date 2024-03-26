@@ -7,7 +7,7 @@ import os
 import secrets
 import toml
 
-toml_file_path = "./config.toml"
+toml_file_path = "backend\config.toml"
 data = toml.load(toml_file_path)
 
 def _getConn():
@@ -57,7 +57,7 @@ class RegisterHandler(RequestHandler):
         hashed_password, salt = hash_password(pwd)
         try:
             cursor = self.conn.cursor()
-            cursor.execute('insert into t_teacher values(null,"%s","%s","%s","%s")'%(uname,hashed_password,t_title,t_name))
+            cursor.execute('insert into t_teacher values(null,"%s","%s","%s","%s","%s")'%(uname,hashed_password,t_title,t_name,salt))
             print(hashed_password)
             self.conn.commit()
             self.write('注册成功')
