@@ -1938,13 +1938,14 @@ class Ui_MainWindow(object):
         self.main_widget.setCurrentIndex(0)
         self.tabWidget.setCurrentIndex(0)
         QtCore.QMetaObject.connectSlotsByName(MainWindow)
-
+        self.add_stu_btn.hide()
+        # self.login_btn.hide()
     def retranslateUi(self, MainWindow):
         _translate = QtCore.QCoreApplication.translate
         MainWindow.setWindowTitle(_translate("MainWindow", "MainWindow"))
         self.current_stu_label.setText(_translate("MainWindow", "当前学生:"))
         self.add_stu_btn.setText(_translate("MainWindow", "手动录入"))
-        self.login_btn.setText(_translate("MainWindow", "批量导入"))
+        self.login_btn.setText(_translate("MainWindow", "退出账号"))
         self.xzcy_sig.setText(_translate("MainWindow", "小组成员电子签名:"))
         self.xzcy_add.setText(_translate("MainWindow", "+"))
         self.xzzz_sig.setText(_translate("MainWindow", "小组组长电子签名:"))

@@ -33,6 +33,7 @@ class Event:
         uname = self.parent.username.text()
         pwd = self.parent.password.text()
         response_text = tools.internet.update_id(uname,pwd)
+        print(response_text)
         response_dict = json.loads(response_text)
         status = response_dict['status']
         
@@ -43,6 +44,44 @@ class Event:
             glv.set('mode',acc_type)
             self.parent.init_mode()
             self.parent.stackedWidget.setCurrentIndex(2)
+            
+            if acc_type == "teacher":
+                stu = response_dict['stu_list']
+                t_name = response_dict['received']
+                t_title = response_dict['t_title']
+                for i in range(len(stu)):
+                    current_stu = stu[i]
+                    print(type(current_stu))
+                    id = current_stu[0]
+                    # name = current_stu[1]
+                    proposal_text = tools.internet.fetch_proposal(id)
+                    proposal_score = json.loads(proposal_text)['received']
+                    midterm_text = tools.internet.fetch_midterm(id)
+                    midterm_score = json.loads(midterm_text)['received']
+                    defense_text = tools.internet.fetch_defense(id)
+                    defense_score = json.loads(defense_text)['received']                
+                    print("proposal_score",proposal_score)
+                    self.student_operate.add_basic_info(current_stu,t_name,t_title,proposal_score,midterm_score,defense_score)
+                else:
+                    self.parent.update_inform()
+            elif acc_type == "student":
+                stu_info = response_dict['stu_info']
+                id = stu_info[0]
+                t_name = response_dict['t_name']
+                t_title = response_dict['t_title']
+                proposal_text = tools.internet.fetch_proposal(id)
+                proposal_score = json.loads(proposal_text)['received']
+                midterm_text = tools.internet.fetch_midterm(id)
+                midterm_score = json.loads(midterm_text)['received']
+                defense_text = tools.internet.fetch_defense(id)
+                defense_score = json.loads(defense_text)['received']                
+                print("proposal_score",proposal_score)
+                self.student_operate.add_basic_info(stu_info,t_name,t_title,proposal_score,midterm_score,defense_score)
+                self.parent.update_inform()
+                
+
+            # print(type(stu))
+            
         else:
             msg = response_dict['message']
             QMessageBox.warning(self.parent,"警告",msg)

@@ -40,7 +40,60 @@ class student(QObject):
         self.table.replace(nan, '')
 
 
-    def add_item(self,item):
+    def add_basic_info(self,stu_item:list,teacher_name,teacher_title,proposal_score,midterm_score,defense_score):
+        self.table = pd.read_csv(self.table_path, index_col='ID',encoding='utf-8')
+        key=int(stu_item[0])
+        data=[
+        stu_item[1],
+        stu_item[2],
+        stu_item[3],
+        stu_item[4],
+        stu_item[5],
+        stu_item[6],
+        teacher_name,
+        teacher_title,
+        '',
+        '',
+        '',
+        
+        proposal_score[1],
+        proposal_score[2],
+        proposal_score[3],
+        proposal_score[4],
+        proposal_score[5],
+        proposal_score[6],
+        proposal_score[7],
+        proposal_score[8],
+        proposal_score[9],
+
+        midterm_score[1],
+        midterm_score[2],
+        midterm_score[3],
+        midterm_score[4],
+        midterm_score[5],
+        midterm_score[6],
+        midterm_score[7],
+        midterm_score[8],
+
+        defense_score[1],
+        defense_score[2],
+        defense_score[3],
+        defense_score[4],
+        defense_score[5],
+        defense_score[6],
+        defense_score[7],
+        defense_score[8],
+        defense_score[9],
+        defense_score[10]
+        ]
+        # print('key',key)
+        # print('data',data)
+        self.table.loc[key]=data
+        # print(self.table)
+        self.table.to_csv(self.table_path,index=True,index_label="ID",encoding='utf-8')
+        self.table = pd.read_csv(self.table_path, index_col='ID',encoding='utf-8')
+
+    def add_item(self,item:dict):
         self.table = pd.read_csv(self.table_path, index_col='ID',encoding='utf-8')
         key=int(item['ID'])
         data=[

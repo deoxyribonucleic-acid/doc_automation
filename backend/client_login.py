@@ -67,7 +67,7 @@ app = tornado.web.Application([
 ])
         
 #绑定地址和端口号
-app.listen(8000)
+app.listen(8888)
 
 #启动服务器不断监听端口是否有请求
 tornado.ioloop.IOLoop.current().start()#instance()也可以

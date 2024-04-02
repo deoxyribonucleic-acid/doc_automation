@@ -259,7 +259,7 @@ class main_ui(QMainWindow,Ui_MainWindow):
         self.add_stu.triggered.connect(self.show_reg_ui)
         self.add_stu_btn.clicked.connect(self.show_reg_ui)
         #self.login_btn.clicked.connect(self.show_web)
-        self.login_btn.clicked.connect(self.import_excel)
+        self.login_btn.clicked.connect(lambda:(self.stackedWidget.setCurrentIndex(1),self.toolBar.hide(),self.username.clear(),self.password.clear()))
 
         self.pushButton.clicked.connect(self.controller.login2template)
         self.pushButton_2.clicked.connect(self.controller.login2signature)
