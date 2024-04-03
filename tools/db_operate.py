@@ -19,7 +19,7 @@ toml_file_path = "backend\config.toml"
 data = toml.load(toml_file_path)
 
 def _getConn():
-    return MySQLdb.connect(host=data['owner']['host'],user=data['owner']['user'],passwd=data['owner']['passwd'],db=data['owner']['db'],port=data['owner']['port'])
+    return MySQLdb.connect(host=data['owner']['host'],user=data['owner']['user'],passwd=data['owner']['passwd'],db=data['owner']['db'],port=data['owner']['port'],charset='utf8',autocommit=1)
 
 class student(QObject):
     import_complete = pyqtSignal()

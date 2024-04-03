@@ -1,5 +1,7 @@
 import sys
 
+from PyQt5.QtGui import QCloseEvent
+
 from tools import global_variable as glv
 glv._init()
 
@@ -17,8 +19,8 @@ from RegEvent import reg
 from tools.db_operate import dbutils
 
 import requests
-
-
+import os
+import pandas as pd
 class reg_ui(QDockWidget,Ui_DockWidget):
     update_db=pyqtSignal()
 
@@ -99,7 +101,7 @@ class main_ui(QMainWindow,Ui_MainWindow):
             stu_table=self.controller.read_all_student()
             if stu_table.shape[0]==0:
                 # self.controller.choose_and_import()
-                QMessageBox.warning(self,"警告","学生列表为空，请录入或导入学生信息！")
+                # QMessageBox.warning(self,"警告","学生列表为空，请录入或导入学生信息！")
                 break
             else:
                 self.init_info()
@@ -259,7 +261,7 @@ class main_ui(QMainWindow,Ui_MainWindow):
         self.add_stu.triggered.connect(self.show_reg_ui)
         self.add_stu_btn.clicked.connect(self.show_reg_ui)
         #self.login_btn.clicked.connect(self.show_web)
-        self.login_btn.clicked.connect(lambda:(self.stackedWidget.setCurrentIndex(1),self.toolBar.hide(),self.username.clear(),self.password.clear()))
+        self.login_btn.clicked.connect(self.logout)
 
         self.pushButton.clicked.connect(self.controller.login2template)
         self.pushButton_2.clicked.connect(self.controller.login2signature)
@@ -368,6 +370,38 @@ class main_ui(QMainWindow,Ui_MainWindow):
         else:
             self.zhichen_input.setStyleSheet(main_style.input_box())
 
+    def logout(self):
+        self.stackedWidget.setCurrentIndex(1)
+        self.toolBar.hide()
+        self.username.clear()
+        self.password.clear()
+        file_path = 'database\student.csv'
+        # 检查文件是否存在，然后删除
+        if os.path.exists(file_path):
+            os.remove(file_path)
+            print(f"文件 {file_path} 已被删除。退出账号")
+        else:
+            print(f"文件 {file_path} 不存在。退出账号")
+        if not os.path.exists(file_path):
+            table=pd.DataFrame(columns=['ID','stu_name','academy','major','grade','banji','title','teacher','zhichen','zdls','xzzz','xzcy',
+            'com_1_1','com_1_2','com_1_3','com_1_4','com_1_5','com_1_6','com_1_7','com_1_8','com_1_9',
+            'com_2_1','com_2_2','com_2_3','com_2_4','com_2_5','com_2_6','com_2_7','com_2_8',
+            'com_3_1','com_3_2','com_3_3','com_3_4','com_3_5','com_3_6','com_3_7','com_3_8','com_3_9','com_3_10'
+                                        ])
+            table.to_csv(file_path,encoding='utf-8',index=False)
+
+    def closeEvent(self, a0: QCloseEvent) -> None:
+        print("goodbye")
+        file_path = 'database\student.csv'
+
+        # 检查文件是否存在，然后删除
+        if os.path.exists(file_path):
+            os.remove(file_path)
+            print(f"文件 {file_path} 已被删除。")
+        else:
+            print(f"文件 {file_path} 不存在。")
+        return super().closeEvent(a0)
+    
 def main(args=None):
     glv.set('debug', False)
     glv.set('mode', 'full')

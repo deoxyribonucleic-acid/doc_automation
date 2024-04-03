@@ -7,12 +7,12 @@ import MySQLdb
 import toml
 import hashlib
 import re
-
+import pymysql
 toml_file_path = "backend\config.toml"
 data_toml = toml.load(toml_file_path)
 
 def _getConn():
-    return MySQLdb.connect(host=data_toml['owner']['host'],user=data_toml['owner']['user'],passwd=data_toml['owner']['passwd'],db=data_toml['owner']['db'],port=data_toml['owner']['port'],charset='utf8')
+    return MySQLdb.connect(host=data_toml['owner']['host'],user=data_toml['owner']['user'],passwd=data_toml['owner']['passwd'],db=data_toml['owner']['db'],port=data_toml['owner']['port'],charset='utf8',autocommit = 1)
 
 def verify_password(password, hashed_password, salt):
     """验证密码是否正确"""
@@ -84,20 +84,24 @@ class LoginHandler(RequestHandler):
 
 class ProposalHandler(RequestHandler):
     def initialize(self,conn):
-        self.conn = conn
-        self.cursor = self.conn.cursor()
+        return
+        
     def get(self):
+        #自动提交事务
+        conn = pymysql.connect(host=data_toml['owner']['host'],user=data_toml['owner']['user'],password=data_toml['owner']['passwd'],database=data_toml['owner']['db'])
+        cursor = conn.cursor()
         ID = self.get_argument("ID")
         if len(ID)>0:
-            self.cursor.execute('select * from t_proposal_review where s_id =%s',(ID,))
-            proposal_list = self.cursor.fetchone()
+            cursor.execute('select * from t_proposal_review where s_id =%s',(ID,))
+            proposal_list = cursor.fetchone()
+            print("proposal_list:",proposal_list)
             if len(proposal_list) != 10:
                 self.write({"status":"error","msg":"分数不全,请联系管理员"})
             else:
                 self.write({"status":"success","received":proposal_list})
         else:
             self.write({"status": "error", "message": "No user found"})
-            
+        cursor.close()    
     def post(self):
         attribute = self.get_argument("attribute")
         data = self.get_argument("data")
@@ -228,6 +232,7 @@ class MidtermHandler(RequestHandler):
         if len(ID)>0:
             self.cursor.execute('select * from t_midterm_review where s_id =%s',(ID,))
             midterm_list = self.cursor.fetchone()
+            self.conn.commit()
             if len(midterm_list) != 9:
                 self.write({"status":"error","msg":"分数不全,请联系管理员"})
             else:
@@ -362,6 +367,7 @@ class DefenseHandler(RequestHandler):
         if len(ID)>0:
             self.cursor.execute('select * from t_defense_review where s_id =%s',(ID,))
             defense_list = self.cursor.fetchone()
+            self.conn.commit()
             if len(defense_list) != 11:
                 self.write({"status":"error","msg":"分数不全,请联系管理员"})
             else:
