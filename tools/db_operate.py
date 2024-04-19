@@ -44,47 +44,12 @@ class student(QObject):
         self.table = pd.read_csv(self.table_path, index_col='ID',encoding='utf-8')
         key=int(stu_item[0])
         data=[
-        stu_item[1],
-        stu_item[2],
-        stu_item[3],
-        stu_item[4],
-        stu_item[5],
-        stu_item[6],
-        teacher_name,
-        teacher_title,
-        '',
-        '',
-        '',
+        stu_item[1],stu_item[2],stu_item[3],stu_item[4],stu_item[5],stu_item[6],teacher_name,teacher_title,'','','',
+
+        proposal_score[1],proposal_score[2],proposal_score[3],proposal_score[4],proposal_score[5],proposal_score[6],proposal_score[7],proposal_score[8],proposal_score[9],
         
-        proposal_score[1],
-        proposal_score[2],
-        proposal_score[3],
-        proposal_score[4],
-        proposal_score[5],
-        proposal_score[6],
-        proposal_score[7],
-        proposal_score[8],
-        proposal_score[9],
-
-        midterm_score[1],
-        midterm_score[2],
-        midterm_score[3],
-        midterm_score[4],
-        midterm_score[5],
-        midterm_score[6],
-        midterm_score[7],
-        midterm_score[8],
-
-        defense_score[1],
-        defense_score[2],
-        defense_score[3],
-        defense_score[4],
-        defense_score[5],
-        defense_score[6],
-        defense_score[7],
-        defense_score[8],
-        defense_score[9],
-        defense_score[10]
+        midterm_score[1],midterm_score[2],midterm_score[3],midterm_score[4],midterm_score[5],midterm_score[6],midterm_score[7],midterm_score[8],
+        defense_score[1],defense_score[2],defense_score[3],defense_score[4],defense_score[5],defense_score[6],defense_score[7],defense_score[8],defense_score[9],defense_score[10]
         ]
         # print('key',key)
         # print('data',data)
